@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>signup Page</title>
+  <title>Login Page</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
@@ -11,52 +11,46 @@
 	<link rel="stylesheet" href="/static/css/style.css">
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<form  action="http://127.0.0.1:8000/registeruser" method="post">
+<body >
+<form  action="http://127.0.0.1:8000/loginuser" method="post">
 <div class="box-form">
 	<div class="left">
 		<div class="overlay">
-		<h1>Out Lining.</h1><br> 
+		<h1>Out Lining.</h1><br>
 		<h3>where you can outline multiple events in a single go </h3>
-		
+          <mark>
+          <h3> Login as a Collaborator</h3>
+</mark>
 		</div>
 	</div>
 		<div class="right">
-			<img id="img" src="/static/images/avatar.jpg" >
-		<h3>SignUp</h3>
-		<p> Have an account? <a href="http://127.0.0.1:8000/login">Login Here</a> </p>
+			<img id="img" src="/static/images/avatar.jpg">
+		<h3>Login </h3>
+		<p>Don't have an account? <a href="http://127.0.0.1:8000/register2">Create Your Account</a> it takes less than a minute</p>
+
 		<div class="inputs">
-			<input type="text" placeholder="Enter your name" name="username" required>
-              <br>
-            <input type="date" placeholder="Enter you DOB" name="dob" required>
-<br>
-<input type="text" placeholder="Enter company name" name="org" required><br>
-
-			<input type="email" placeholder="Enter your email" name="email" required>
-
-
+			<input type="text" placeholder="Enter you email" name="email" required>
 			<br>
 			<input type="password" placeholder="Enter your password" name="password" minlength="8" maxlength="16" required>
 		</div>
-			
-			<br><br>
-			
-		<div class="remember-me--forget-password">
 
+			<br><br>
+
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
 	<label>
 		<input type="checkbox" name="item" checked/>
 		<span class="text-checkbox">Remember me</span>
 	</label>
 			<p>forget password?</p>
 		</div>
-			
+
 			<br>
-			<button type="submit">SignIn</button>
+			<button type="submit">Login</button>
 	</div>
-	
+
 </div>
 <!-- partial -->
-</form>
+  </form>
 </body>
 </html>

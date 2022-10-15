@@ -1,0 +1,56 @@
+
+.Collaboartor{
+    width: 320px;
+    padding: 010px;
+    border: 5px solid rgb(248, 6, 6);
+    text-align: center;
+    border-radius: 10%;
+ background-color: blueviolet;
+
+}
+
+.admin{
+text-align: center;
+width: 300px;
+padding: 10px;
+border: 5px solid rgb(248, 6, 6);
+margin: 0;
+border-radius: 10%;
+background-color: blueviolet;
+}
+
+.admin a{
+    font-size: xx-large;
+color: chartreuse;
+
+}
+.Collaboartor a{
+
+    font-size: xx-large;
+    color: chartreuse;
+}
+.grp1{
+position:absolute;
+top:38%;
+left: 25%;
+
+}
+.grp2{
+    position:absolute;
+    top:38%;
+    left: 60%;
+
+}
+.head{
+
+    position: absolute;
+    top: 25%;
+    left: 40%;
+}
+body{
+    background-repeat:no-repeat;
+    background-position:fixed;
+     background-size: cover;
+
+
+}

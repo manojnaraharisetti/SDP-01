@@ -7,8 +7,13 @@ from django.http import HttpResponse
 def login(request):
     return render(request ,"login.html")
 
+def login2(request):
+    return render(request ,"login2.html")
 def register(request):
     return render(request , "register.html")
+
+def register2(request):
+    return render(request , "register2.html")
 
 def home(request):
     return render(request,'home.html')
@@ -26,4 +31,9 @@ def contact(request):
     return render(request,'contact.html')
 def about(request):
     return render(request,'about.html')
+
+def calender(request):
+    return render(request,'calender.html')
+def dash(request):
+    return render(request,'dash.html')
 
