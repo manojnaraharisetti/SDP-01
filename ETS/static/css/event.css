@@ -1,0 +1,105 @@
+.cust_book1{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(6, 177, 245, 0.607);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 30%;
+   left: 31%;
+   width: 45%;
+
+
+}
+
+.cust_book1 h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(247, 2, 2);
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    margin-bottom: 15px;
+    padding: 4px 0;
+}
+.cust_btn{
+    position: absolute;
+top: 110%;
+    left: 35%;
+    font-size: 22;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    width: 35%;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 90px;
+    border: 2px solid rgb(245, 183, 26);
+    font-weight: bold;
+}
+.cust_btn img{
+    position:absolute;
+    left: 7%;
+    top: 9%;
+    width: 30px;
+    padding: 1px;
+}
+.cust_btn:hover{
+    color: rgb(250, 234, 8);
+    background: rgb(20, 173, 238);
+    outline: none;
+}
+.box{
+    
+    padding: 2px;
+    margin:12px 0px;
+    width: 100%;
+}
+.box:hover{
+    border-bottom: 3px solid rgb(3, 222, 247);
+
+}
+.box input,select {
+    text-align: center;
+    background: none;
+    font-size: 20px;
+    width: 65%;
+    outline: none;
+    border: none;
+    color: rgb(0, 75, 250);
+    padding: 5px 10px;
+    border-bottom: 2px solid rgb(26, 245, 114);
+}
+.box select:hover{
+border: 1px outset rgb(1, 149, 255);
+
+}
+.box input:hover{
+    border: 1px outset rgb(4, 230, 255);
+    border-radius: 8%;
+}
+.yesorno{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 60px 25px;
+  text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 95%;
+   left: 31%;
+   width: 40%;
+   border-bottom: 2px solid rgb(245, 183, 26);
+}
+.yesorno:hover{
+    border-bottom: 2px solid rgb(1, 149, 255);
+
+}
+body{
+
+    background-repeat:no-repeat;
+    background-position:fixed;
+     background-size: cover;
+ }
+
+

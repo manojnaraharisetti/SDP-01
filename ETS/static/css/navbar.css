@@ -1,0 +1,18 @@
+.navbar-brand img{
+width:80px
+}
+#header{
+    height:65px;
+}
+.nav-link{
+    color: aliceblue;
+}
+.nav-link:hover{
+    color:rgb(92, 191, 230);
+}
+
+body{
+    background-repeat:no-repeat;
+    background-position:fixed;
+     background-size: cover;
+ }

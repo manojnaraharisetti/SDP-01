@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-repeat:no-repeat;
+    background-position:fixed;
+     background-size: cover;
+ }
+.navbar-brand img{
+    width:80px
+    }
+
+#header{
+    height:65px;
+}
+.nav-link{
+    color: aliceblue;
+}
+.nav-link:hover{
+    color:rgb(92, 191, 230);
+}
+#marquee{
+    color: rgb(17, 0, 255);
+    background-color: aliceblue;
+}
+.grp1{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
+.grp1 a{
+    text-decoration: none;
+    width: 65%;
+    align-items: center;
+    padding: 12px 10px;
+    font-size: 40px;
+    border-radius: 45%;
+
+}
+.grp1 li{
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgb(205, 168, 233);
+    border-radius: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.838);
+    box-shadow: 0 0 22px rgb(19, 241, 204);
+
+}
+.grp1 li:hover{
+background-color: rgb(81, 130, 176);
+
+}
+.grp1 li a:hover{
+    color: aliceblue;
+    background-color: transparent;
+    padding:10px 8px;
+    text-decoration: underline;
+
+}
+.grp1 li{
+    font-weight: bolder;
+}
+/*2*/
+.grp2{
+    position: absolute;
+    top: 44%;
+    left: 37%;
+}
+.grp2 a{
+    width: 105%;
+    text-decoration: none;
+    align-items: center;
+    padding: 12px 10px;
+    font-size: 40px;
+    border-radius: 45%;
+
+}
+.grp2 li{
+    width: 235%;
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgb(205, 168, 233);
+    border-radius: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.838);
+    box-shadow: 0 0 22px rgb(19, 241, 204);
+    text-align: center;
+
+}
+.grp2 li:hover{
+background-color: rgb(81, 130, 176);
+
+}
+.grp2 li a:hover{
+    color: aliceblue;
+    background-color: transparent;
+    padding:10px 8px;
+    text-decoration: underline;
+
+}
+.grp2 li{
+    font-weight: bolder;
+}
+
+/*3*/
+.grp3{
+    position: absolute;
+    top: 58%;
+    left: 37%;
+}
+.grp3 a{
+    width: 105%;
+    text-decoration: none;
+    align-items: center;
+    padding: 12px 10px;
+    font-size: 40px;
+    border-radius: 45%;
+
+}
+.grp3 li{
+    width: 108%;
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgb(205, 168, 233);
+    border-radius: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.838);
+    box-shadow: 0 0 22px rgb(19, 241, 204);
+    text-align: center;
+
+}
+.grp3 li:hover{
+background-color: rgb(81, 130, 176);
+
+}
+.grp3 li a:hover{
+    color: aliceblue;
+    background-color: transparent;
+    padding:10px 8px;
+    text-decoration: underline;
+
+}
+.grp3 li{
+    font-weight: bolder;
+}
+
+/*4*/
+.grp4{
+    position: absolute;
+    top: 72%;
+    left: 37%;
+}
+.grp4 a{
+    width: 105%;
+    text-decoration: none;
+    align-items: center;
+    padding: 12px 10px;
+    font-size: 40px;
+    border-radius: 45%;
+
+}
+.grp4 li{
+    width: 200%;
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgb(205, 168, 233);
+    border-radius: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.838);
+    box-shadow: 0 0 22px rgb(19, 241, 204);
+    text-align: center;
+
+}
+.grp4 li:hover{
+background-color: rgb(81, 130, 176);
+
+}
+.grp4 li a:hover{
+    color: aliceblue;
+    background-color: transparent;
+    padding:10px 8px;
+    text-decoration: underline;
+
+}
+.grp4 li{
+    font-weight: bolder;
+}
+
+.grp5{
+    position: absolute;
+    top: 87%;
+    left: 37%;
+}
+.grp5 a{
+    width: 105%;
+    text-decoration: none;
+    align-items: center;
+    padding: 12px 10px;
+    font-size: 40px;
+    border-radius: 45%;
+
+}
+.grp5 li{
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgb(205, 168, 233);
+    border-radius: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.838);
+    box-shadow: 0 0 22px rgb(19, 241, 204);
+    text-align: center;
+
+}
+.grp5 li:hover{
+background-color: rgb(81, 130, 176);
+
+}
+.grp5 li a:hover{
+    color: aliceblue;
+    background-color: transparent;
+    padding:10px 8px;
+    text-decoration: underline;
+
+}
+.grp5 li{
+    font-weight: bolder;
+}
+#footer{
+    position: absolute;
+    top: 130%;
+    width: 100%;
+
+}
+#g img{
+    width: 2%;
+
+
+
+#quote{
+    font-weight: bold;
+    text-shadow: 0 0 22px rgb(150, 240, 240);
+    color: rgb(4, 59, 105);
+    font-size: 26px;
+    padding: 0px 64px;
+}
+
+.heading{
+    padding: 12px;
+}
+.heading h1{
+    font-size: 42px;
+    font-weight: bolder;
+    color: rgb(90, 4, 14);
+}
+.heading h1:hover{
+    font-size: 44px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
