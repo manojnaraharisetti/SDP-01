@@ -27,13 +27,3 @@ def contact(request):
 def about(request):
     return render(request,'about.html')
 
-def loginuser(request):
-   email=request.POST['email']
-   password=request.POST['password']
-
-
-
-def registeruser(request):
-   email=request.POST['email']
-   password=request.POST['password']
-   data=

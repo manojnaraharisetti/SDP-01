@@ -14,7 +14,80 @@
   <div class="container-fluid" >
     <a class="navbar-brand" href="http://127.0.0.1:8000/home"><img src="/static/images/logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(136, 213, 246, 0.607);
+    color: white;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .title {
+    color: grey;
+  }
+
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .button:hover {
+    background-color: #555;
+  }
+
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  .team:hover{
+    background-color: rgb(81, 130, 176);
+  }
+  .container{
+    background-color: rgba(6, 177, 245, 0.607);
+  }
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -23,19 +96,19 @@
           <a class="nav-link" href="contact">Contact</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/about">About</a>
+          <a class="nav-link" href="http://127.0.0.1:5000/about">About</a>
         </li>
         </li>
            <li class="nav-item">
-          <a class="nav-link" href="faqs">FAQ's</a>
+          <a class="nav-link" href="FAQ's">FAQ's</a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link" href="history">History</a>
+          <a class="nav-link" href="newuser">History</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="event">Create a new event</a>
+          <a class="nav-link" href="/event">Create a new event</a>
         </li>
       </ul>
 
@@ -55,7 +128,7 @@
 </script>
 <div align="center">
 <h1> Out Lining.</h1><br>
-    <h2>where you can outline multiple events in a single go </h2>
+		<h2>where you can outline multiple events in a single go </h2>
 
     <div class="container">
       <div style="text-align:center">
@@ -68,19 +141,19 @@
         </div>
         <div class="column">
           <form action="/action_page.php">
-            <label for="fname">Name</label>
+            <label for="name" id="labels">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name..">
-            <label for="lname">email</label>
-            <input type="text" id="lname" name="email" placeholder="email..">
-            <label for="country">State</label>
+            <label for="lname" id="labels">email</label>
+            <input type="text" id="email" name="email" placeholder="email..">
+            <label for="state" id="labels">State</label>
             <select id="state" name="state">
-              <option value="Andhra pradesh">Andhra pradesh</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Tamilnadu">Tamilnadu</option>
+              <option value="Andhra pradesh" id="labels">Andhra pradesh</option>
+              <option value="Kerala" id="labels">Kerala</option>
+              <option value="Tamilnadu" id="labels">Tamilnadu</option>
             </select>
-            <label for="subject">Subject</label>
+            <label for="subject" id="labels">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-            <input type="submit" value="Submit">
+            <button class="cust_btn">Submit</button>
           </form>
         </div>
       </div>

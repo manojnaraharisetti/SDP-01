@@ -27,10 +27,15 @@
   /* Style the container/contact section */
   .container {
     border-radius: 5px;
-    background-color:rgb(18, 141, 182);
+    background-color: rgba(6, 177, 245, 0.607);
     padding: 10px;
     border: none;
     outline: none;
+
+
+    display: inline-block;
+    color: rgb(255, 255, 255);
+
 
   }
 
@@ -61,4 +66,43 @@
   #fname{
     width: 100%;
     background-color: antiquewhite;
+  }
+  #subject{
+    border-bottom: 2px solid rgb(26, 245, 114);
+    color: rgb(0, 75, 250);
+  }
+  #name{
+    border-bottom: 2px solid rgb(26, 245, 114);
+    color: rgb(0, 75, 250);
+  }
+  #email{
+    border-bottom: 2px solid rgb(26, 245, 114);
+    color: rgb(0, 75, 250);
+  }
+  #state{
+    border-bottom: 2px solid rgb(26, 245, 114);
+    color: rgb(0, 75, 250);
+  }
+  .column{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    border-radius: 20px;
+  }
+  .cust_btn{
+    font-size: 22;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    width: 35%;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 90px;
+    border: 2px solid rgb(245, 183, 26);
+    font-weight: bold;
+  }
+  .cust_btn:hover{
+    color: rgb(250, 234, 8);
+    background: rgb(20, 173, 238);
+    outline: none;
   }
