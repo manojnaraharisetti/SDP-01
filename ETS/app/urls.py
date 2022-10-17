@@ -11,5 +11,10 @@ path('about',views.about,name="about"),
 path('login2',views.login2,name='login2' ),
 path('login',views.login,name='login2' ),
 path('register2',views.register2,name='register2'),
-path('calender',views.calender,name="calender")
+path('home2',views.home2,name="home2"),
+path('calender',views.calender,name="calender"),
+path('registeruser',views.registeruser,name="registeruser"),
+path('loginuser',views.loginuser,name="loginuser"),
+path('registeruser2',views.registeruser2,name="registeruser2"),
+path('loginuser2',views.loginuser2,name="loginuser2")
 ]

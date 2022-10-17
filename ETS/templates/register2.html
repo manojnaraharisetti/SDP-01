@@ -13,7 +13,8 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<form  action="http://127.0.0.1:8000/registeruser" method="post">
+<form  action="http://127.0.0.1:8000/registeruser2" method="post">
+	{% csrf_token %}
 <div class="box-form">
 	<div class="left">
 		<div class="overlay">
@@ -28,7 +29,7 @@
 		<h3>SignUp</h3>
 		<p> Have an account? <a href="http://127.0.0.1:8000/login2">Login Here as a collaborator</a> </p>
 		<div class="inputs">
-			<input type="text" placeholder="Enter your name" name="username" required>
+			<input type="text" placeholder="Enter your name" name="name" required>
               <br>
             <input type="date" placeholder="Enter you DOB" name="dob" required>
 <br>
