@@ -8,6 +8,6 @@ import unittest.util
 from django.db import models
 
 # Create your models here.
-from .models import Register
+from .models import Registerpg
 
-admin.site.register(Register)
+admin.site.register(Registerpg)

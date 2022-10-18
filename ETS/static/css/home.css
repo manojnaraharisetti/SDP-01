@@ -4,7 +4,7 @@
 }
 body{
     background-repeat:no-repeat;
-    background-position:fixed;
+    background-position:center;
      background-size: cover;
  }
 .navbar-brand img{
