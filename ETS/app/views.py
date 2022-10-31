@@ -14,20 +14,13 @@ from .models import Registerpg
 def login(request):
     return render(request ,"login.html")
 
-'''def login2(request):
-    return render(request ,"login2.html")'''
 def register(request):
     return render(request , "register.html")
 def home(request):
     return render(request,'home.html')
 
-'''def register2(request):
-    return render(request , "register2.html")'''
-
-
 def history(request):
     return render(request,'history.html')
-
 
 def faqs(request):
     return render(request,'faqs.html')
@@ -42,12 +35,21 @@ def about(request):
 
 def calender(request):
     return render(request,'calender.html')
-#def home2(request):
-   # return render(request,'home2.html')
 
 def loginuser(request):
-    mail = request.POST['email']
-    passwd = request.POST['password']
+    if request.method == 'POST':
+        username = request.POST['email']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+        print(username, password)
+        if login is not None:
+            auth.login(request,user)
+            return redirect('/home')
+        else:
+            messages.info(request, 'invalid username or password')
+            return redirect("/login")
+    else:
+        return render(request,'login.html')
 
 def dash(request):
     return render(request,'dash.html')

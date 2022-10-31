@@ -6,10 +6,164 @@
  <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet" >
-<link rel="stylesheet" href="/static/css/home.css">
-</head>
+<!-- <link rel="stylesheet" href="/static/css/home.css"> -->
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+  background: url(/static/images/back.jpg) no-repeat center center fixed;
+  background-size: cover;
+ }
+.navbar-brand img{
+    width:80px
+    }
 
-<body background="/static/images/back2.jpg">
+#header{
+    height:65px;
+}
+.nav-link{
+    color: aliceblue;
+}
+.nav-link:hover{
+    color:rgb(92, 191, 230);
+}
+#marquee{
+    color: rgb(17, 0, 255);
+    background-color: aliceblue;
+}
+#footer{
+    position: absolute;
+    top: 220%;
+    width: 100%;
+
+}
+#g img{
+    width: 2%;
+
+}
+
+ #quote{
+    font-weight: bold;
+    text-shadow: 0 0 22px rgb(150, 240, 240);
+    color: rgb(4, 59, 105);
+    font-size: 26px;
+    padding: 0px 64px;
+}
+
+.heading{
+    padding: 12px;
+}
+.heading h1{
+    font-size: 42px;
+    font-weight: bolder;
+    color: rgb(90, 4, 14);
+}
+.heading h1:hover{
+    font-size: 44px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.grp1{
+    width: 1300px;
+    height: 270px;
+    /* padding: 120px;  */
+    text-align: center;
+    border-radius:20px;
+    background-color: rgb(99, 209, 240);
+    position: absolute;
+    left: 120px;
+    opacity:0.8;
+    text-align: 3.0;
+}
+.grp1 h3{
+  display: inline-block;
+}
+.grp1:hover{
+  width: 1350px;
+    height: 275px;
+  cursor: pointer;
+}
+
+.grp2{
+  width: 1300px;
+  height: 270px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(99, 209, 240);
+    position: absolute;
+    left: 120px;
+    top: 70%;
+    opacity: 0.8;
+}
+.grp2 h3{
+  display: inline-block;
+}
+.grp3{
+    width: 1300px;
+    height: 270px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(99, 209, 240);
+    position: absolute;
+    left: 120px;
+    top: 117%;
+    opacity: 0.8;
+
+}
+.grp3 h3{
+  display: inline-block;
+}
+.grp4{
+    width: 1300px;
+    height: 270px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(99, 209, 240);
+    position: absolute;
+    left: 120px;
+   top: 165%;
+   opacity: 0.8;
+}
+.grp4 h3{
+  display: inline-block;
+}
+.grppic1{
+  position: absolute;
+  left: 0%;
+    width: 300px;
+    height: 270px;
+    top: 0%;
+    border-radius: 20px;
+   margin-right: 1000px;
+   }
+.grppic3{
+  position: absolute;
+  left: 0%;
+    width: 300px;
+    height: 270px;
+    top: 0%;
+    border-radius: 20px;
+   margin-right: 1000px;
+   }
+.grppic4{
+  position: absolute;
+  left: 0%;
+    width: 300px;
+    height: 270px;
+    top: 0%;
+    border-radius: 20px;
+   margin-left: 1000px;
+   }
+
+
+
+
+</style>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg bg-dark" id="header"  >
     <a class="navbar-brand" href="http://127.0.0.1:8000/home"><img src="/static/images/logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +173,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/contact" >CONTACT</a>
+          <a class="nav-link" href="contact" >CONTACT</a>
         </li>
            <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/about">ABOUT</a>
@@ -52,31 +206,41 @@
   <h1 align="center">OUT LINING</h1>
 </div>
 <div class="pop" align="center">
-    <marquee direction="right" id="quote">
+    <marquee direction="right" >
         WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO
     </marquee>
   </div>
-<div class="grp1">
-  <ul>
-  <li><a href="http://127.0.0.1:8000/event"  > Create a new Event</a><br><br></li>
+  <div class="grp1">
+    <h3 id="grp1m">Creating a new event</h3>
+    <img src="/static/images/grp1-1.png" class="grppic1">
+    <!-- <img src="/static/images/grp1-1.png" class="grppic1"> -->
+    <a href="http://127.0.0.1:5000/event"></a>
 
-  </ul>
-</div>
-<div class="grp2">
-<li><a href="http://127.0.0.1:8000/history">History        </a><br><br></li>
+  <br><br>
+
+  </div>
+<div class="grp2" >
+  <h3 id="grp2m">Creating a new event</h3>
+<a href="http://127.0.0.1:5000/history"></a><br><br>
   </div>
 <div class="grp3">
-<li><a href="http://127.0.0.1:8000/coll"  > Collaborators List</a><br><br></li>
- </div>
-<div class="grp4">
-   <li>  <a href="http://127.0.0.1:8000/calender"   >      Calender     </a><br><br></li>
+  <h3 id="grp1m">Notification History</h3>
+  <img src="/static/images/grp3.jpg" class="grppic3">
+   <a href="http://127.0.0.1:5000/cal"   >    </a><br><br>
 </div>
-<div class="grp5">
-  <li>  <a href="http://127.0.0.1:8000/doc"   >      Stored Documents    </a><br><br></li>
+<div class="grp4">
+  <h3 id="grp1m">Storage Documents</h3>
+  <img src="/static/images/grp4.png" class="grppic4">
+   <a href="http://127.0.0.1:5000/doc"   >   </a><br><br>
 </div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" >
 </script>
+
+
+
+
+
 
 
 

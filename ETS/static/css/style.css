@@ -167,3 +167,14 @@ label span.text-checkbox {
 label input[type="checkbox"] {
   display: none;
 }
+#img{
+  padding-right: 30px;
+  padding-left: 100px;
+}
+#log{
+  padding-left: 78px;
+}
+#sin{
+  padding-left: 40px;
+}
+
