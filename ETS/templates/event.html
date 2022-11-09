@@ -1,87 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Creating a new event</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet" >
-<link rel="stylesheet" href="/static/css/navbar.css">
-<link rel="stylesheet" href="/static/css/event.css">
-</head>
-<body background="/static/images/back.jpg">
-<nav class="navbar navbar-expand-lg bg-dark" id="header">
-  <div class="container-fluid" >
-    <a class="navbar-brand" href="http://127.0.0.1:8000/home"><img src="/static/images/logo.jpg"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link" href="contact">Contact</a>
-        </li>
-           <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/about">About</a>
-        </li>
-        </li>
-           <li class="nav-item">
-          <a class="nav-link" href="faqs">FAQ's</a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="history">History</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="event">Create a new event</a>
-        </li>
-      </ul>
-
-      <form class="d-flex" role="search">
-
-
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-
-      </form>
-    </div>
-  </div>
-</nav>
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" >
-</script>
-<div align="center">
-<h1>Out Lining.</h1><br>
-		<h3>where you can outline multiple events in a single go </h3>
-
+{% extends 'base.html' %}
+{% block title %} Event {% endblock %}
+{% block body %}
+<div class="heading">
+  <h1 align="center">OUT LINING</h1>
 </div>
-<div align="center" class="cust_book1">
+<div class="pop" align="center">
+    <marquee direction="right" id="pop1" >
+        <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+    </marquee>
+  </div>
+<div align="center" class="cust_book1" >
   <u><h1>Creating a new Event</h1></u>
-<form class="box" >
+  <form class="box" action="http://127.0.0.1:8000/event/" method="post">
+  {% csrf_token %}
 
-Type of event:<select>
+Type of event:<select name="tp"  class="drop" >
   <option value="None">None</option>
   <option value="Marriage">Marriage</option>
   <option value="Party">Party</option>
   <option value="Birthday Party">Birthday Party</option>
-</select><br>
-Name of the customer:<input type="text" name="name"><br><br>
-Date of the event:<input type="date" name="date"><br><br>
-StartTime:<input type="time" name="starttime"><br><br>
-EndTime:<input type="time" name="endtime"><br><br>
+</select><br><br>
+Name of the customer:<input type="text" name="name" class="cust"><br><br>
+Date of the event:<input type="date" name="date"  class="date"><br><br>
+StartTime:<input type="time" name="stime"  class="st"><br><br>
+EndTime:<input type="time" name="etime"  class="et"><br><br>
 
-Venue: <input type="text" name="venue"><br><br>
+Venue: <input type="text" name="venue" id="n6" class="venu" ><br><br>
 
+<div>
+  Is food required:
+    <select name="food" id="n7" class="food">
+      <option value="None">None</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select> 
 </div>
-<div class="yesorno">
-  Is food required: <input type="radio" name="yesfood">Yes
-  <input type="radio" name="Nofood">No<br><br>
-  </div>
-
-<button class="cust_btn"><img src="/static/images/book.png">BOOK</button>
+<div>
+<button class="cust_btn" type="submit">BOOK</button>
+</div>
 </form>
+</div> 
 </body>
+</html> 
 
-</html>
+{% endblock %}

@@ -106,3 +106,7 @@
     background: rgb(20, 173, 238);
     outline: none;
   }
+  body{
+    background: url(/static/images/back.jpg) no-repeat center center fixed;
+    background-size: cover;
+   }

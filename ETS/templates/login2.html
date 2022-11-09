@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>signup Page</title>
+  <title>Login Page</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
@@ -125,6 +125,7 @@ right:35%;
   width: auto;
 }
 .box-form .right button {
+  float: right;
   color: #fff;
   font-size: 16px;
   padding: 12px 35px;
@@ -192,53 +193,45 @@ label input[type="checkbox"] {
 	</style>
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<form  action="/userregisteruser" method="post">
+<body >
+<form  action="http://127.0.0.1:8000/dealerloginuser" method="post">
 	{% csrf_token %}
 <div class="box-form">
 	<div class="left">
 		<div class="overlay">
-		<h1>Out Lining.</h1><br>
+		<h1>Out Lining.</h1><br> 
 		<h3>where you can outline multiple events in a single go </h3>
-
+		
 		</div>
 	</div>
 		<div class="right">
-			<img id="img" src="/static/images/avatar.jpg" >
-		<h3 id="sin">SignUp</h3>
-		<p> Have an account? <a href="/userlogin">Login Here</a> </p>
+			<img id="img" src="/static/images/avatar.jpg">
+		<h3 id="log">Login</h3>
+		<p>Don't have an account? <a href="/dash">Create Your Account</a> it takes less than a minute</p>
+
 		<div class="inputs">
-			<input type="text" placeholder="First name" name="fn" required>
-              <br>
-            <input type="text" placeholder="Last name" name="ln" required>
-
-			<input type="email" placeholder="Enter your email" name="email" required>
-
+			<input type="text" placeholder="Enter you username" name="username" required>
 			<br>
-<input type="text" placeholder="username" name="uname" required>
-
-			<br>
-			<input type="password" placeholder="Enter your password" name="password" minlength="8" maxlength="16" required>
+			<input type="password" placeholder="Enter your password" name="passwd" minlength="8" maxlength="16" required>
 		</div>
-
+			
 			<br><br>
-
+			
 		<div class="remember-me--forget-password">
-
+				<!-- Angular -->
 	<label>
 		<input type="checkbox" name="item" checked/>
 		<span class="text-checkbox">Remember me</span>
 	</label>
 			<p>forget password?</p>
 		</div>
-
+			
 			<br>
-			<button type="submit">SignIn</button>
+			<button type="submit">Login</button>
 	</div>
-
+	
 </div>
 <!-- partial -->
-</form>
+  </form>
 </body>
 </html>

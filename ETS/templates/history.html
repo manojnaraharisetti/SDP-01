@@ -1,13 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} History {% endblock %}
+{% block body %}
+    <div class="heading">
+      <h1 align="center">OUT LINING</h1>
+    </div>
+    <div class="pop" align="center">
+        <marquee direction="right" id="pop1" >
+            <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+        </marquee>
+      </div>
+      <div align="center" class="cust_book1" >
+        <u><h1 class="book"">Booking History</h1></u>
+        
+      <!-- <form class="box" action="http://127.0.0.1:8000/history/" method="post">
+        
+        {% csrf_token %} -->
 
+<table id="customers">
+  <tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Event</th>
+    <th>Date</th>
+  </tr>
+  <tbody>
+  {% for i in al %} 
+  <tr>  
+    <th scope="row">{{forloop.counter}}</th>
+    <td >{{i.cname}}</td>
+    <td>{{i.type}}</td>
+     <td>{{i.cdate}}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+      
+      
+      </div>
+    </form>
 
 
 
 </body>
 </html>
+{% endblock %}

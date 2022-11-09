@@ -1,0 +1,26 @@
+{% extends 'dealerbase.html' %}
+{% block title %} Wedding {% endblock %}
+{% block body %}
+<div class="heading">
+      <h1 align="center">OUT LINING</h1>
+  </div>
+  <div class="pop" align="center">
+        <marquee direction="right" id="pop1" >
+            <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+        </marquee>
+      </div>
+ <div align="center" class="cust_book2">
+    <u><h1>Catering service</h1></u>
+          <form class="box" action="http://127.0.0.1:8000/cateringservice/" method="post">
+          {% csrf_token %}
+          Service Name:<input type="text" name="catername" class="sname"><br><br>
+          Name:<input type="text" name="catername1" class="name"><br><br>
+          Price per head:<input type="text" name="caterprice" class="capacity"><br><br>
+          Mobile:<input type="text" name="caternum" class="num"><br><br>
+          Email:<input type="text" name="cateremail" class="email"><br><br>
+           <div>
+            <button class="cust_btn2" type="submit">ADD</button>
+            </div>
+      </form>
+     </div> 
+{% endblock %}

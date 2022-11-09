@@ -1,0 +1,23 @@
+{% extends 'dealerbase.html' %}
+{% block title %} Music concerts {% endblock %}
+{% block body %}
+<div align="center" class="cust_book2" >
+    <u><h1>Musical Concert</h1></u>
+          <form class="box" action="http://127.0.0.1:8000/Musicalconcert/" method="post">
+            {% csrf_token %}
+           Concert Name:<input type="text" name="bnames" class="cust"><br><br>
+           Organizer Name:<input type="text" name="namel" class="name"><br><br>
+           Address:<input type="text" name="address1" class="addr"><br><br>
+           City:<input type="text" name="citys" class="city"><br><br>
+           Postal code:<input type="text" name="codes" class="code"><br><br>
+           Ticket Price:<input type="text" name="price" class="capacity"><br><br>
+           Mobile:<input type="text" name="nums" class="num"><br><br>
+           Email:<input type="email" name="email2" class="email"><br><br>
+           <div>
+            <button class="cust_btn2" type="submit">ADD</button>
+            </div>
+      </form>
+    </div>
+</body>
+</html>
+{% endblock %}

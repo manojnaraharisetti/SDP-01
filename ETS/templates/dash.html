@@ -4,29 +4,85 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/static/css/dash.css">
+    <style>
+
+.Collaboartor{
+    width: 500px;
+    padding: 030px;
+    left: auto;
+    border: 5px solid rgb(248, 6, 6);
+    text-align: center;
+    border-radius: 10%;
+ background-color: blueviolet;
+
+}
+/* .Collaboartor:hover{
+    width: 550px;
+    height: 275px;
+  cursor: pointer;
+} */
+
+.admin{
+text-align: center;
+width: 500px;
+padding: 30px;
+border: 5px solid rgb(248, 6, 6);
+margin: 0;
+border-radius: 10%;
+background-color: blueviolet;
+}
+
+.admin a{
+    font-size: xx-large;
+color: chartreuse;
+
+}
+.Collaboartor a{
+
+    font-size: xx-large;
+    color: chartreuse;
+}
+.grp1{
+position:absolute;
+top:38%;
+left: 25px;
+
+}
+.grp2{
+    position:absolute;
+    top:38%;
+    left: 60%;
+
+}
+.head{
+
+    position: absolute;
+    top: 15%;
+    left: 35%;
+}
+body{
+    background-repeat:no-repeat;
+    background-position:fixed;
+     background-size: cover;
+
+
+}
+    </style>
 </head>
 <body background="/static/images/back2.jpg">
-    <div class="heading">
-        <h1 align="center">OUT LINING</h1>
-      </div>
-      <div class="pop" align="center">
-          <marquee direction="right" id="quote" >
-              WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO
-          </marquee>
-        </div>
     <div class="head">
-    <h1 > Choose your type of account</h1>
+    <h1 class="h"> Choose your type of account</h1>
 </div>
     <div class="grp1">
 <div class="Collaboartor" style="top: 50%;">
   <img src="/static/images/Screenshot (9).png " width="70%" height="50% "  ><br>
-   <a href="http://127.0.0.1:8000/login"> Supervisior</a>
+   <a href="/userregister">User</a>
 </div>
 </div>
 <div class="grp2">
 <div class="admin">
     <img src="/static/images/admin.png" width="40%" height="50%" ><br>
-     <a href="http://127.0.0.1:8000/admin"> Admin</a>
+     <a href="/dealerregister">Dealer</a>
     </div>
   </div>
 </body>

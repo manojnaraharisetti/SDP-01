@@ -194,7 +194,7 @@ label input[type="checkbox"] {
 
 </head>
 <body >
-<form  action="http://127.0.0.1:8000/loginuser" method="post">
+<form  action="http://127.0.0.1:8000/userloginuser" method="post">
 	{% csrf_token %}
 <div class="box-form">
 	<div class="left">
@@ -207,12 +207,12 @@ label input[type="checkbox"] {
 		<div class="right">
 			<img id="img" src="/static/images/avatar.jpg">
 		<h3 id="log">Login</h3>
-		<p>Don't have an account? <a href="http://127.0.0.1:8000/register">Create Your Account</a> it takes less than a minute</p>
+		<p>Don't have an account? <a href="/dash">Create Your Account</a> it takes less than a minute</p>
 
 		<div class="inputs">
-			<input type="text" placeholder="Enter you email" name="email" required>
+			<input type="text" placeholder="Enter you username" name="username" required>
 			<br>
-			<input type="password" placeholder="Enter your password" name="password" minlength="8" maxlength="16" required>
+			<input type="password" placeholder="Enter your password" name="passwd" minlength="8" maxlength="16" required>
 		</div>
 			
 			<br><br>
