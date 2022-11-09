@@ -8,8 +8,9 @@ import unittest.util
 from django.db import models
 
 # Create your models here.
-from .models import event,catering,Musicalconcertm,weddinghalls
+from .models import event,catering,Musicalconcertm,weddinghalls,contact1
 admin.site.register(event)
 admin.site.register(catering)
 admin.site.register(Musicalconcertm)
 admin.site.register(weddinghalls)
+admin.site.register(contact1)

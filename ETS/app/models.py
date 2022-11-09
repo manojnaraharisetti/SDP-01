@@ -56,6 +56,19 @@ class weddinghalls(models.Model):
 
     def __str__(self):
         return ' Name : '+self.name+' - Event : '+self.wname
+        
+class contact1(models.Model):
+    username=models.CharField(max_length=200)
+    Name=models.CharField(max_length=200)
+    email=models.CharField(max_length=200)
+    State=models.CharField(max_length=200)
+    Subject=models.CharField(max_length=200)
+
+    def __str__(self):
+        return ' Name : '+self.Name+' - Email : '+self.email
+
+
+
 
 
 

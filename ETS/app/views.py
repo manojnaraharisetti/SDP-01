@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 import datetime
-from .models import event,catering,Musicalconcertm,weddinghalls
+from .models import event,catering,Musicalconcertm,weddinghalls,contact1
 
 def dealerlogin(request):
     return render(request ,"login2.html")
@@ -59,9 +59,10 @@ def userloginuser(request):
         print(username, password)
         if user1 is not None:
             auth.login(request,user1)
+            messages.success(request,"successfully logged in" )
             return redirect('/home')
         else:
-            messages.info(request, 'invalid username or password')
+            messages.info(request,"Authentication failed")
             return redirect("/userlogin")
     else:
         return render(request,'login.html')
@@ -132,9 +133,10 @@ def event1(request):
         username = None
         if request.user.is_authenticated:
             username = request.user.username
-        print(typeofevent,Name,Date,starttime,endtime,venue,food,username)
+        print(typeofevent,Name,Date,starttime,endtime,venue,food)
         book = event(type=typeofevent,cname=Name,cdate=Date,cstime=starttime,cetime=endtime,cvenue=venue,cfood=food,username=username)
         book.save()
+        messages.success(request,"Event successfully booked" )
     return render(request,'event.html')
     
    
@@ -192,6 +194,21 @@ def weddinghall1(request):
          weddinghall1.save()
 
     return render(request,'weddinghall.html')
+
+def contactform(request):
+    if request.method == 'POST':
+        name=request.POST['name']
+        emailS=request.POST['email']
+        stateS=request.POST['state']
+        subjectS=request.POST['subject']
+        if request.user.is_authenticated:
+            username = request.user.username
+        print(name,emailS,stateS,subjectS,username)
+        contactform = contact1(Name=name,email=emailS,State=stateS,Subject=subjectS,username=username)
+        contactform.save()
+        messages.success(request, "Message sent." )
+
+    return render(request,'contact.html')
 
 
 
