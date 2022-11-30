@@ -25,6 +25,7 @@ def home(request):
 
 def dealerhome(request):
     return render(request,'dealerhome.html')
+
 def history(request):
     allevents = event.objects.all()
     context = {'al':allevents}
@@ -62,7 +63,7 @@ def userloginuser(request):
             messages.success(request,"successfully logged in" )
             return redirect('/home')
         else:
-            messages.info(request,"Authentication failed")
+            messages.success(request,"Authentication failed")
             return redirect("/userlogin")
     else:
         return render(request,'login.html')
@@ -77,6 +78,7 @@ def dealerloginuser(request):
         if user2 is not None:
             if user2.is_staff == True: 
                 auth.login(request,user2)
+                messages.success(request,"successfully logged in" )
                 return redirect('/dealerhome')
             messages.info(request, 'invalid username or password')
             return redirect("/dealerlogin")
@@ -88,6 +90,8 @@ def dealerloginuser(request):
 
 def dash(request):
     return render(request,'dash.html')
+
+
 def userregisteruser(request):
     if request.method == 'POST':
         fname = request.POST['fn']
@@ -111,7 +115,6 @@ def dealerregisteruser(request):
         email = request.POST['email']
         username = request.POST['uname']
         passwd = request.POST['password']
-        messages.info(request, 'Passwords dont match')
         date = datetime.date.today()
         user = User.objects.create_user(first_name = fname, last_name = lname, username = username , password = passwd, email = email, date_joined = date,is_staff=True)
         user.save()

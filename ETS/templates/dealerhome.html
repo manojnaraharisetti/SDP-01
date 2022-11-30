@@ -2,6 +2,12 @@
 {% block title %} Home {% endblock %}
 {% block body %}
 <div class="heading">
+  {% for msg in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+     {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %} 
   <h1 align="center">OUT LINING</h1>
 </div>
 <div class="pop" align="center">
@@ -10,27 +16,47 @@
     </marquee>
  </div>
  <div class="grp1">
-    <h3 id="grp1m">Catering</h3>
-    <img src="/static/images/grp1-1.png" class="grppic1">
-    <!-- <img src="/static/images/grp1-1.png" class="grppic1"> -->
-    <a href="/cateringservice">edrfghjk</a>
+    <h3 id="grp1m">Catering Management</h3>
+    <img src="/static/images/caterings.jpg" class="grppic1">
+    <h4 id="cateringblog"> 
+     A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+     Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests with 
+     food and refreshments. When the client contacts the caterer for the catering services,the catering company can hand over the 
+     catering booking form to the client that he is required to fill.</h4>
+   
 
   <br><br>
 
   </div>
 <div class="grp2" >
   <h3 id="grp2m">Musical concerts</h3>
-<a href="/Musicalconcert">sdfghj</a><br><br>
+  <img src="/static/images/Music.jpg" class="grppic4">
+  <h4 id="Musicalblog"> 
+    A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+    Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests with 
+    food and refreshments. When the client contacts the caterer for the catering services,the catering company can hand over the 
+    catering booking form to the client that he is required to fill.</h4>
+  <!-- <a href="/Musicalconcert">sdfghj</a><br><br> -->
   </div>
 <div class="grp3">
   <h3 id="grp3m">Wedding</h3>
-  <img src="/static/images/grp3.jpg" class="grppic3">
-   <a href="/weddinghall">  hbgfladivlahdgrl  </a><br><br>
+  <img src="/static/images/wedding.jpg" class="grppic3">
+  <h4 id="Weddingblog"> 
+    A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+    Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests with 
+    food and refreshments. When the client contacts the caterer for the catering services,the catering company can hand over the 
+    catering booking form to the client that he is required to fill.</h4>
+   <!-- <a href="/weddinghall">  hbgfladivlahdgrl  </a><br><br> -->
 </div>
 <div class="grp4">
   <h3 id="grp4m">Birthday parties</h3>
-  <img src="/static/images/grp4.png" class="grppic4">
-   <a href="http://127.0.0.1:8000/doc"   >   </a><br><br>
+  <img src="/static/images/birthday.jpg" class="grppic4">
+  <h4 id="BirthdayBlog"> 
+    A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+    Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests with 
+    food and refreshments. When the client contacts the caterer for the catering services,the catering company can hand over the 
+    catering booking form to the client that he is required to fill.</h4>
+   <!-- <a href="http://127.0.0.1:8000/doc"   >   </a><br><br> -->
 </div>
 <!-- Footer -->
 <footer class="bg-dark text-center text-white" id="footer">
@@ -171,9 +197,9 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
-
 </body>
 </html>
+
 {% endblock %}
 
 

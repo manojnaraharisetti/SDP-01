@@ -11,14 +11,13 @@
       </div>
  <div align="center" class="cust_book2">
     <u><h1>Catering service</h1></u>
-          <form class="box" action="http://127.0.0.1:8000/cateringservice/" method="post">
+          <form class="box" action="http://127.0.0.1:8000/cateringservice/" method="post" id="met">
           {% csrf_token %}
-          Service Name:<input type="text" name="catername" class="sname"><br><br>
-          Name:<input type="text" name="catername1" class="name"><br><br>
-          Price per head:<input type="text" name="caterprice" class="Price"><br><br>
-          Mobile:<input type="text" name="caternum" class="num"><br><br>
-          Email:<input type="text" name="cateremail" class="email"><br><br>
-          
+          Service Name:<input type="text" name="catername" class="sname" required><br><br>
+          Name:<input type="text" name="catername1" class="name" required><br><br>
+          Price per head:<input type="text" name="caterprice" class="Price" required><br><br>
+          Mobile:<input type="text" name="caternum" class="num" required><br><br>
+          Email:<input type="text" name="cateremail" class="email" required><br><br>
            <div>
             <button class="cust_btn2" type="submit">ADD</button>
             </div>

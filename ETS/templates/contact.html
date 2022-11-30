@@ -21,18 +21,18 @@
           <form action="http://127.0.0.1:8000/contact/" method="post">
             {% csrf_token %}
             <label for="name" id="label1">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name.." class="cname">
+            <input type="text" id="name" name="name" placeholder="Your name.." class="cname" required>
             <label for="name" id="label2">email</label>
-            <input type="text" id="email" name="email" placeholder="email.." class="cemail">
+            <input type="text" id="email" name="email" placeholder="email.." class="cemail" required>
             <label for="state" id="label3">State</label>
-            <select id="state" name="state" class="cstate">
+            <select id="state" name="state" class="cstate" required>
               <option value="Andhra pradesh" >Andhra pradesh</option>
               <option value="Kerala">Kerala</option>
               <option value="Tamilnadu" >Tamilnadu</option>
             </select>
             <br>
             <label for="subject" id="label4">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" class="csubject"></textarea>
+            <textarea id="subject" name="subject" placeholder="Minimum 20 words" style="height:170px" class="csubject" required></textarea>
             <button class="cust_btn1">Submit</button>
           </form>
         </div>
