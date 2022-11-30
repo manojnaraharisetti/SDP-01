@@ -12,26 +12,26 @@
   </div>
 <div align="center" class="cust_book1" >
   <u><h1>Creating a new Event</h1></u>
-  <form class="box" action="http://127.0.0.1:8000/event/" method="post">
+  <form class="box" action="http://127.0.0.1:8000/event/" method="post" id="mrt">
   {% csrf_token %}
 
-Type of event:<select name="tp"  class="drop" >
-  <option value="None">None</option>
+Type of event:<select name="tp"  class="drop" required>
+  <!-- <option value="None">None</option> -->
   <option value="Marriage">Marriage</option>
   <option value="Party">Party</option>
   <option value="Birthday Party">Birthday Party</option>
 </select><br><br>
-Name of the customer:<input type="text" name="name" class="cust"><br><br>
-Date of the event:<input type="date" name="date"  class="date"><br><br>
-StartTime:<input type="time" name="stime"  class="st"><br><br>
-EndTime:<input type="time" name="etime"  class="et"><br><br>
+Name of the customer:<input type="text" name="name" class="cust" required><br><br>
+Date of the event:<input type="date" name="date"  class="date" required><br><br>
+StartTime:<input type="time" name="stime"  class="st" required><br><br>
+EndTime:<input type="time" name="etime"  class="et" required><br><br>
 
-Venue: <input type="text" name="venue" id="n6" class="venu" ><br><br>
+Venue: <input type="text" name="venue" id="n6" class="venu" required><br><br>
 
 <div>
   Is food required:
-    <select name="food" id="n7" class="food">
-      <option value="None">None</option>
+    <select name="food" id="n7" class="food" required>
+      <!-- <option value="None">None</option> -->
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select> 

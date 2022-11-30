@@ -23,7 +23,7 @@ urlpatterns =[ path('',views.userlogin,name='login' ),
               path('weddinghall/',views.weddinghall1,name="weddinghall"),
               path('cateringservice/',views.Catering,name="cateringservice"),
               path('Musicalconcert/',views.MusicConcerts,name="Musicalconcert"),
-              
+
 
             
 ]

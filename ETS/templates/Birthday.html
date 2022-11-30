@@ -1,0 +1,29 @@
+{% extends 'dealerbase.html' %}
+{% block title %} Wedding {% endblock %}
+{% block body %}
+<div class="heading">
+      <h1 align="center">OUT LINING</h1>
+  </div>
+  <div class="pop" align="center">
+        <marquee direction="right" id="pop1" >
+            <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+        </marquee>
+      </div>
+ <div align="center" class="cust_book2">
+    <u><h1>Biryhday Parties</h1></u>
+          <form class="box" action="http://127.0.0.1:8000/Birthdayparty/" method="post" id="met">
+          {% csrf_token %}
+          Birthday Hall Name:<input type="text" name="bnames" class="cust" required><br><br>
+          Name:<input type="text" name="name" class="cusname" required><br><br>
+          Address:<input type="text" name="address1" class="addr" required><br><br>
+          City:<input type="text" name="citys" class="city" required><br><br>
+          Postal code:<input type="text" name="codes" class="code" required><br><br>
+          Price:<input type="text" name="prices" class="capacity" required><br><br>
+          Mobile:<input type="text" name="nums" class="num" required><br><br>
+          Email:<input type="email" name="emails1" class="email" required><br><br>
+           <div>
+            <button class="cust_btn2" type="submit">ADD</button>
+            </div>
+      </form>
+     </div> 
+{% endblock %}

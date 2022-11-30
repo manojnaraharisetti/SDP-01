@@ -5,14 +5,14 @@
     <u><h1>Wedding Hall</h1></u>
           <form class="box" action='http://127.0.0.1:8000/weddinghall/' method="post">
             {% csrf_token %}
-           Wedding Hall Name:<input type="text" name="bname" class="cust"><br><br>
-           Name:<input type="text" name="name" class="wsname"><br><br>
-           Address:<input type="text" name="address" class="addr"><br><br>
-           City:<input type="text" name="city" class="city"><br><br>
-           Postal code:<input type="text" name="code" class="code"><br><br>
-           Price:<input type="text" name="price" class="capacity"><br><br>
-           Mobile:<input type="text" name="num" class="num"><br><br>
-           Email:<input type="email" name="emails" class="email"><br><br>
+           Wedding Hall Name:<input type="text" name="bname" class="cust" required><br><br>
+           Name:<input type="text" name="name" class="wsname" required><br><br>
+           Address:<input type="text" name="address" class="addr" required><br><br>
+           City:<input type="text" name="city" class="city" required><br><br>
+           Postal code:<input type="text" name="code" class="code" required><br><br>
+           Price:<input type="text" name="price" class="capacity" required><br><br>
+           Mobile:<input type="text" name="num" class="num" required><br><br>
+           Email:<input type="email" name="emails" class="email" required><br><br>
            <div>
             <button class="cust_btn2" type="submit">ADD</button>
             </div>
