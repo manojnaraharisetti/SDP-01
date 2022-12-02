@@ -221,15 +221,16 @@ def event1(request):
         print(typeofevent,Name,Date,starttime,endtime,venue,food)
         book = event(type=typeofevent,cname=Name,cdate=Date,cstime=starttime,cetime=endtime,cvenue=venue,cfood=food,username=username)
         book.save()
-        msg = "Your Event has been successfully booked"+"\n\n"+"Event Name :"+typeofevent+"\n"+"Name :"+Name+"\n"+"Date :"+Date+"\n"
+        msg = "Your Event has been successfully booked"+"\n\n\n"+"EVENT DEATILS :"+"\n\n"+"Event Name :"+typeofevent+"\n\n"+"Name :"+Name+"\n\n"+"Date :"+Date+"\n"
         send_mail('Event Confirmation',  # subject
                   msg,
                   'outlining25@gmail.com',  # from
                    [request.user.email],  # to
                   fail_silently=False,
                   )
+        
 
-        messages.success(request,"Event is successfuly Booked" )
+        messages.success(request,"Event is successfuly Booked !verify your mail" )
     return render(request,'event.html')
 
 
