@@ -1,7 +1,44 @@
 {% extends 'logbase.html' %}
 {% block title %} Login {% endblock %}
 {% block body %}
+<script type="text/javascript">
+	window.history.forward();
+	function noBack() {
+		window.history.forward();
+	}
+</script>
+<style>
+	.alert {
+	  padding: 20px;
+	  background-color: #f44336;
+	  color: white;
+	}
+	
+	.closebtn {
+	  margin-left: 15px;
+	  color: white;
+	  font-weight: bold;
+	  float: right;
+	  font-size: 22px;
+	  line-height: 20px;
+	  cursor: pointer;
+	  transition: 0.3s;
+	}
+	
+	.closebtn:hover {
+	  color: black;
+	}
+	</style>
  <body >
+	<div>
+		{% for msg in messages %}
+	   <div class="alert">
+	  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+	  <strong>!</strong> {{msg}}
+	</div>
+
+	
+	{% endfor %}
   <form  action="http://127.0.0.1:8000/dealerloginuser" method="post">
       {% csrf_token %}
   <div class="box-form">
@@ -14,7 +51,7 @@
 		<div class="right">
 			<img id="img" src="/static/images/avatar.jpg">
 		<h3 id="log">Login</h3>
-		<p>Don't have an account? <a href="/dash">Create Your Account</a> it takes less than a minute</p>
+		<p>Don't have an account? <a href="/dealerregister">Create Your Account</a> it takes less than a minute</p>
 		<div class="inputs">
 			<input type="text" placeholder="Enter you username" name="username" required>
 			<br>
@@ -28,10 +65,10 @@
 	<label>
 		<input type="checkbox" name="item" checked/>
 		<span class="text-checkbox">Remember me</span>
-	</label>
-			<p>forget password?</p>
+	</label><br><br>
+	<a href="/fp2">forget password?</a>
 		</div>
-			
+		Not a Dealer? <a href="/userlogin">User login</a>
 			<br>
 			<button type="submit">Login</button>
 	</div>

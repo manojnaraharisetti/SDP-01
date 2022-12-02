@@ -5,11 +5,127 @@
  <title>{% block title %}{% endblock title %}</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet">
-      <link rel="shortcut icon" href="favicon.ico" type="static/images/favicon.png">  
+      <link rel="shortcut icon" href="favicon.ico" type="static/images/favicon.png"> 
 <style>
    *{
     margin: 0;
     padding: 0;
+}
+.qrcode{
+  top: 150%;
+  position: absolute;
+  left: 60%;
+}
+.qr{
+  width: 50%;
+}
+.homeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 96%;
+    top: 5%;
+}
+.homeicon2{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    right: 96%;
+    top: 5%;
+}
+.eventhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 90%;
+    top: 5%;
+}
+.contacthomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 90%;
+    top: 26%;
+}
+.faqshomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+}
+.historyhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 5%;
+}
+.historyhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 5%;
+}
+.historyhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 5%;
+}
+.birthdaybookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 5%;
+}
+.cateringbookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 8%;
+}
+.concertbookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 6%;
+}
+.weddingbookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 5%;
 }
 body{
   background: url(/static/images/back.jpg) no-repeat center center fixed;
@@ -34,22 +150,25 @@ body{
 }
 #footer{
     position: absolute;
-    top: 220%;
+    top: 180%;
     width: 100%;
 
 }
+
 #g img{
     width: 2%;
 
 }
- #quote{
+ /* #quote{
     font-weight: bold;
     text-shadow: 0 0 22px rgb(150, 240, 240);
     color: rgb(4, 59, 105);
     font-size: 26px;
     padding: 0px 64px;
+} */
+.container p-4{
+  background-color: #000;
 }
-
 .heading{
     padding: 12px;
 }
@@ -80,12 +199,25 @@ body{
 .grp1 h3{
   display: inline-block;
 }
-/* .grp1:hover{
-  width: 1350px;
-    height: 275px;
-  cursor: pointer;
-} */
-
+#grp1m{
+  text-shadow: 0 0 10px rgb(255 255 255);
+    color: #440854;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 1%;
+}
+#Event{
+  position: absolute;
+    top: 13%;
+    left: 25%;
+    display: inline;
+    width: 72%;
+    font-size: 25px;
+    padding: 12px;
+    color: #f0f9ff;
+    font-weight: bold;
+}
 .grp2{
   width: 1300px;
   height: 270px;
@@ -96,6 +228,25 @@ body{
     left: 120px;
     top: 80%;
     opacity: 0.8;
+}
+#grp2m{
+  text-shadow: 0 0 10px rgb(255 255 255);
+    color: #440854;
+    font-weight: bold;
+    position: absolute;
+    left: 30%;
+    top: 1%;
+}
+#History{
+  position: absolute;
+    top: 13%;
+    right: 25%;
+    display: inline;
+    width: 72%;
+    font-size: 25px;
+    padding: 12px;
+    color: #f0f9ff;
+    font-weight: bold;
 }
 .grp2 h3{
   display: inline-block;
@@ -112,22 +263,24 @@ body{
     opacity: 0.8;
 
 }
-.grp3 h3{
-  display: inline-block;
-}
-.grp4{
-    width: 1300px;
-    height: 270px;
-    text-align: center;
-    border-radius: 20px;
-    background-color: rgb(99, 209, 240);
+#grp3m{
+  text-shadow: 0 0 10px rgb(255 255 255);
+    color: #440854;
+    font-weight: bold;
     position: absolute;
-    left: 120px;
-   top: 170%;
-   opacity: 0.8;
+    left: 50%;
+    top: 1%;
 }
-.grp4 h3{
-  display: inline-block;
+#calender{
+  position: absolute;
+    top: 13%;
+    left: 25%;
+    display: inline;
+    width: 72%;
+    font-size: 25px;
+    padding: 12px;
+    color: #f0f9ff;
+    font-weight: bold;
 }
 .grppic1{
   position: absolute;
@@ -138,6 +291,15 @@ body{
     border-radius: 20px;
    margin-right: 1000px;
    }
+.grppic2{
+  position: absolute;
+  left: 0%;
+    width: 300px;
+    height: 270px;
+    top: 0%;
+    border-radius: 20px;
+   margin-left: 1000px;
+   }
 .grppic3{
   position: absolute;
   left: 0%;
@@ -146,15 +308,6 @@ body{
     top: 0%;
     border-radius: 20px;
    margin-right: 1000px;
-   }
-.grppic4{
-  position: absolute;
-  left: 0%;
-    width: 300px;
-    height: 270px;
-    top: 0%;
-    border-radius: 20px;
-   margin-left: 1000px;
    }
 #pop1{
      background-color: rgb(63, 147, 211);
@@ -191,10 +344,17 @@ body {
     }
   
     .about-section {
+      box-shadow: 0 0 22px rgb(62 145 224);
       padding: 50px;
       text-align: center;
       background-color: rgba(136, 213, 246, 0.607);
       color: white;
+    }
+    .about-section h1{
+     border-bottom: 2px solid rgb(245, 183, 26);
+    }
+    .marq{
+      text-shadow: 0 0 22px rgb(62 145 224);
     }
   
     .container {
@@ -239,7 +399,7 @@ body {
     .container{
       background-color: rgba(6, 177, 245, 0.607);
     }
-<!--contact.css-->
+/* <!--contact.css--> */
 * {
     box-sizing: border-box;
   }
@@ -331,27 +491,32 @@ body {
 
     border-radius: 20px;
   }
-  .cust_btn1{
+  
+  body{
+    background: url(/static/images/back.jpg) no-repeat center center fixed;
+    background-size: cover;
+   }
+   .cust_btn1{
+    position: absolute;
+    top: 105%;
+    left: 65%;
     font-size: 22;
     background: none;
     cursor: pointer;
     outline: none;
-    width: 35%;
+    width: 15%;
     margin: 12px 0;
     padding: 6px;
     border-radius: 90px;
     border: 2px solid rgb(245, 183, 26);
     font-weight: bold;
-  }
-  .cust_btn1:hover{
+} 
+
+.cust_btn1:hover{
     color: rgb(250, 234, 8);
     background: rgb(20, 173, 238);
     outline: none;
-  }
-  body{
-    background: url(/static/images/back.jpg) no-repeat center center fixed;
-    background-size: cover;
-   }
+} 
    /* faqs.css */
    .heading{
     padding: 12px;
@@ -372,7 +537,7 @@ body {
   height: 700px;
     text-align: center;
     border-radius: 20px;
-    background-color: rgb(99, 209, 240);
+    background-color: rgb(136, 220, 243);
     position: absolute;
     left: 120px;
     top: 30%;
@@ -432,8 +597,9 @@ border: 1px outset rgb(1, 149, 255);
 #label4{
   color: aliceblue;
 }
-  /* event.css */
-.cust_book1{
+/* avaliability of dealers */
+.cust_book3{
+  box-shadow: 0 0 22px rgb(62 145 224);
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 78px 25px;
@@ -442,17 +608,44 @@ border: 1px outset rgb(1, 149, 255);
     border-radius: 20px;
     position: absolute;
     top: 30%;
-   left: 31%;
-   width: 45%;
+   left: 17%;
+   width: 68%;
 }
-.cust_book1 h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(100, 240, 126);
+.cust_book3 h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
     display: inline-block;
     font-size: 40px;
-    border-bottom: 2px solid rgb(133, 244, 196);
+    border-bottom: 2px solid rgb(255, 0, 0);
     margin-bottom: 15px;
     padding: 4px 0;
+    font-weight: bold;
+}
+
+
+  /* event.css */
+  .cust_book1{
+    box-shadow: 0 0 22px rgb(62 145 224);
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(108, 185, 245, 0.607);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    width: 45%;
+}
+.cust_book1 h1{
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    margin-bottom: 15px;
+    padding: 4px 0;
+    font-weight: bold; 
+}
+.cust_book1 h1:hover{
+  width: 60%;
 }
  .cust_btn{
     position: absolute;
@@ -469,13 +662,7 @@ border: 1px outset rgb(1, 149, 255);
     border: 2px solid rgb(245, 183, 26);
     font-weight: bold;
 } 
- .cust_btn img{
-    position:absolute;
-    left: 7%;
-    top: 1%;
-    width: 30px;
-    padding: 1px;
-} 
+
 .cust_btn:hover{
     color: rgb(250, 234, 8);
     background: rgb(20, 173, 238);
@@ -503,7 +690,7 @@ border: 1px outset rgb(1, 149, 255);
     padding: 5px 10px;
     border-bottom: 2px solid rgb(26, 245, 114);
 }
-.box select:hover{
+/* .box select:hover{
 border: 1px outset rgb(1, 149, 255);
 
 }
@@ -511,7 +698,7 @@ border: 1px outset rgb(1, 149, 255);
     border: 1px outset rgb(4, 230, 255);
     border-radius: 8%;
 }
-
+ */
 
 body{
 
@@ -538,21 +725,21 @@ body{
     background-position:fixed;
      background-size: cover;
  }
- .drop{
+ /* .drop{
   background-color: rgb(174, 203, 241);
- }
- .food{
+ } */
+ /* .food{
   background-color: rgb(174, 203, 241);
- }
+ } */
  #n2{
   background-color: rgb(174, 203, 241);
  }
  input.cust{
   background-color: rgb(174, 203, 241);
  }
- input.venu{
+ /* input.venu{
   background-color: rgb(174, 203, 241);
- }
+ } */
 
  /* history.css */
  .box{
@@ -579,13 +766,19 @@ body{
 
 /* history.css */
 #customers {
+  box-shadow: 0 0 22px rgb(62 145 224);
   font-family: Arial, Helvetica, sans-serif;
  
 }
 
+table, tr, td {
+  border: 1px solid;
+  border-color: aqua;
+}
+
 #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 20px;
+  border: 3px solid #ddd;
+  padding: 12px;
 }
 #customers th {
   padding-top: 20px;
@@ -605,15 +798,12 @@ body{
    width: 45%;
  }
 
-table, tr, td {
-  border: 1px solid;
-  border-color: aqua;
-}
 </style>
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg bg-dark" id="header"  >
-    <a class="navbar-brand" href="/home"><img src="/static/images/logo.jpg"></a>
+    <a class="navbar-brand" href="/"><img src="/static/images/logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -638,18 +828,33 @@ table, tr, td {
           <li class="nav-item">
           <a class="nav-link" href="/event">CREATE A NEW EVENT</a>
         </li>
+        <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            DEALERS
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/cateringbook"> Food caterings</a></li>
+            <li><a class="dropdown-item" href="/Musicbook">Musical concerts</a></li>
+            <li><a class="dropdown-item" href="/weddingbook">wedding Halls</a></li>
+            <li><a class="dropdown-item" href="/Birthdaybook">Birthday Halls</a></li>
+          </ul>
+        </div>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+          <a class="nav-link" href="/loginout">LOG OUT</a>
+          </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/userlogin">LOGIN</a>
+        </li>
+      {% endif %}
+
       </ul>
-
-      <form class="d-flex" role="search">
-
-
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-
       </form>
     </div>
   </div>
 </nav>
+
 {% for message in messages %}
         <div class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show" role="alert" id="popupmsg">
         <strong>Message: </strong> {{message}}

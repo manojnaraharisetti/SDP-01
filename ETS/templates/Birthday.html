@@ -1,6 +1,83 @@
 {% extends 'dealerbase.html' %}
 {% block title %} Wedding {% endblock %}
 {% block body %}
+<style>
+  .cust_book2{
+    box-shadow: 0 0 22px rgb(62 145 224);
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(108, 185, 245, 0.607);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 30%;
+    left: 31%;
+    width: 45%;
+}
+.cust_book2 h1{
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    margin-bottom: 15px;
+    padding: 4px 0;
+    font-weight: bold; 
+}
+.cust_book2 h1:hover{
+  width: 60%;
+}
+.box{
+  padding: 2px;
+  margin: 50px 0px;
+  width: 100%;
+ 
+}
+.box input,select{
+    text-align: center;
+    background: none;
+    font-size: 20px;
+    width: 65%;
+    outline: none;
+    border: none;
+    color: rgb(245, 247, 251);
+    padding: 5px 10px;
+    border-bottom: 2px solid rgb(245, 183, 26);
+}
+input.sname{
+  padding: 5px 10px;
+}
+.cust_btn2{
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    font-size: 22;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    width: 35%;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 90px;
+    border: 2px solid rgb(245, 183, 26);
+    font-weight: bold;
+} 
+
+.cust_btn2:hover{
+    color: rgb(250, 234, 8);
+    background: rgb(20, 173, 238);
+    outline: none;
+} 
+.drop1{
+  background-color: aliceblue;
+}
+</style>
+<body>
+      {% for msg in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Successfully added!</strong>  {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endfor %}
 <div class="heading">
       <h1 align="center">OUT LINING</h1>
   </div>
@@ -11,19 +88,26 @@
       </div>
  <div align="center" class="cust_book2">
     <u><h1>Biryhday Parties</h1></u>
-          <form class="box" action="http://127.0.0.1:8000/Birthdayparty/" method="post" id="met">
+          <form class="box" action='http://127.0.0.1:8000/birthday/' method="post" >
           {% csrf_token %}
-          Birthday Hall Name:<input type="text" name="bnames" class="cust" required><br><br>
-          Name:<input type="text" name="name" class="cusname" required><br><br>
-          Address:<input type="text" name="address1" class="addr" required><br><br>
-          City:<input type="text" name="citys" class="city" required><br><br>
-          Postal code:<input type="text" name="codes" class="code" required><br><br>
-          Price:<input type="text" name="prices" class="capacity" required><br><br>
-          Mobile:<input type="text" name="nums" class="num" required><br><br>
-          Email:<input type="email" name="emails1" class="email" required><br><br>
+          <a href="/dealerhome">
+            <img src="/static/images/homeicon.png" class="birthdayhomeicon">
+          </a>
+          <div>
+          Service Type:<select name="dp"  class="drop" required>
+            <option value="BirthdayParty">Birthday Party</option>
+          </select><br>
+          Birthday Hall Name:<input type="text" name="birthdaynames" class="cust" required><br>
+          Name:<input type="text" name="birthdayname" class="name" required><br>
+          Address:<input type="text" name="birthdayaddress1" class="addr" required><br>
+          City:<input type="text" name="birthdaycitys" class="city" required><br>
+          Price:<input type="text" name="birthdayprices" class="capacity" required><br>
+          Mobile:<input type="text" name="birthdaynums" class="num" required><br>
+          Email:<input type="email" name="birthdayemails1" class="email" required><br>
            <div>
             <button class="cust_btn2" type="submit">ADD</button>
             </div>
       </form>
      </div> 
+     </body>
 {% endblock %}

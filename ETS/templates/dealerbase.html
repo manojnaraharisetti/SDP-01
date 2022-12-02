@@ -7,236 +7,650 @@
       rel="stylesheet">
       <link rel="icon" href="data:,">
 <style>
-   *{
-    margin: 0;
-    padding: 0;
+  *{
+         margin: 0;
+         padding: 0;
+     }
+    .cateringshomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 90%;
+    top: 5%;
+     }
+     .birthdayhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 90%;
+    top: 5%;
+     }
+     .musichomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 90%;
+    top: 3%;
+     }
+     .weddinghomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 89%;
+    top: 5%;
+     }
+     .cathomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+     }
+  .mushomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    right: 95%;
+    top: 5%;
+     }
+     .wedhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+     }
+     .birhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    right: 95%;
+    top: 5%;
+     }
+     .contacthomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 90%;
+    top: 26%;
 }
+.faqshomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 95%;
+    top: 5%;
+}
+.birthdaybookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 5%;
+}
+.cateringbookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 6%;
+}
+.concertbookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 6%;
+}
+.weddingbookhomeicon{
+  border: 2px solid black;
+    padding: 4px;
+    width: 35px;
+    border-radius: 20px;
+    position: absolute;
+    left: 92%;
+    top: 6%;
+}
+     body{
+       background: url(/static/images/back.jpg) no-repeat center center fixed;
+       background-size: cover;
+      }
+     .navbar-brand img{
+         width:80px
+         }
+     /* .dropdown{
+       left: 5%;
+     } */
+     .dropdown-menu{
+       background-color:rgb(216, 227, 228);
+     }
+     .con{
+       right: 50%;
+     }
+     #header{
+         height:65px;
+     }
+     .nav-link{
+         color: aliceblue;
+         font-size: 110%;
+     }
+     .nav-link:hover{
+         color:rgb(10, 195, 241);
+     }
+     #marquee{
+         color: rgb(17, 0, 255);
+         background-color: aliceblue;
+     }
+     .nav-item{
+       right: 50%;
+     }
+     #cateringblog{
+       position: absolute;
+         top: 20%;
+         left: 23%;
+         display: inline;
+         width: 72%;
+         font-size: 23px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     #Musicalblog{
+       position: absolute;
+         top: 20%;
+         left: 5%;
+         display: inline;
+         width: 72%;
+         font-size: 23px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     #Weddingblog{
+       position: absolute;
+         top: 20%;
+         left: 23%;
+         display: inline;
+         width: 72%;
+         font-size: 23px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     #BirthdayBlog{
+       position: absolute;
+         top: 20%;
+         left: 5%;
+         display: inline;
+         width: 72%;
+         font-size: 23px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     #footer{
+         position: absolute;
+         top: 220%;
+         width: 100%;
+     
+     }
+     #g img{
+         width: 2%;
+     
+     }
+      #quote{
+         font-weight: bold;
+         text-shadow: 0 0 22px rgb(150, 240, 240);
+         color: rgb(4, 59, 105);
+         font-size: 26px;
+         padding: 0px 64px;
+     }
+     
+     .heading{
+         padding: 12px;
+     }
+     .heading h1{
+         font-size: 42px;
+         font-weight: bolder;
+         color: rgb(90, 4, 14);
+     }
+     .heading h1:hover{
+         font-size: 44px;
+         font-weight: bolder;
+         color: rgb(0, 0, 0);
+         cursor: pointer;
+     }
+     .grp1{
+         width: 1300px;
+         height: 270px;
+         /* padding: 120px;  */
+         text-align: center;
+         border-radius:20px;
+         background-color: rgb(99, 209, 240);
+         position: absolute;
+         left: 120px;
+         top: 40%;
+         opacity:0.8;
+         text-align: 3.0;
+     }
+     .grp1 h3{
+       display: inline-block;
+     }
+     #grp1m{
+       text-shadow: 0 0 10px rgb(255 255 255);
+         color: #440854;
+         font-weight: bold;
+         position: absolute;
+         left: 50%;
+         top: 1%;
+     }
+     #catering{
+       position: absolute;
+         top: 13%;
+         left: 25%;
+         display: inline;
+         width: 72%;
+         font-size: 25px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     .grp2{
+       width: 1300px;
+       height: 270px;
+         text-align: center;
+         border-radius: 20px;
+         background-color: rgb(99, 209, 240);
+         position: absolute;
+         left: 120px;
+         top: 85%;
+         opacity: 0.8;
+     }
+     .grp2 h3{
+       display: inline-block;
+     }
+     #grp2m{
+       text-shadow: 0 0 10px rgb(255 255 255);
+         color: #440854;
+         font-weight: bold;
+         position: absolute;
+         left: 30%;
+         top: 1%;
+     }
+     #Music{
+       position: absolute;
+         top: 13%;
+         right: 25%;
+         display: inline;
+         width: 72%;
+         font-size: 25px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     .grp3{
+         width: 1300px;
+         height: 270px;
+         text-align: center;
+         border-radius: 20px;
+         background-color: rgb(99, 209, 240);
+         position: absolute;
+         left: 125px;
+         top: 130%;
+         opacity: 0.8;
+     
+     }
+     .grp3 h3{
+       display: inline-block;
+     }
+     #grp3m{
+       text-shadow: 0 0 10px rgb(255 255 255);
+         color: #440854;
+         font-weight: bold;
+         position: absolute;
+         left: 50%;
+         top: 1%;
+     }
+     #Wedding{
+       position: absolute;
+         top: 13%;
+         left: 25%;
+         display: inline;
+         width: 72%;
+         font-size: 25px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     .grp4{
+         width: 1300px;
+         height: 270px;
+         text-align: center;
+         border-radius: 20px;
+         background-color: rgb(99, 209, 240);
+         position: absolute;
+         left: 120px;
+        top: 180%;
+        opacity: 0.8;
+     }
+     .grp4 h3{
+       display: inline-block;
+     }
+     #grp4m{
+       text-shadow: 0 0 10px rgb(255 255 255);
+         color: #440854;
+         font-weight: bold;
+         position: absolute;
+         left: 30%;
+         top: 1%;
+     }
+     #Birthday{
+       position: absolute;
+         top: 13%;
+         right: 25%;
+         display: inline;
+         width: 72%;
+         font-size: 25px;
+         padding: 12px;
+         color: #f0f9ff;
+         font-weight: bold;
+     }
+     .grppic1{
+       position: absolute;
+       left: 0%;
+         width: 300px;
+         height: 270px;
+         top: 0%;
+         border-radius: 20px;
+        margin-right: 1000px;
+        }
+     .grppic2{
+       position: absolute;
+       left: 0%;
+         width: 300px;
+         height: 270px;
+         top: 0%;
+         border-radius: 20px;
+        margin-left: 1000px;
+        }
+     .grppic3{
+       position: absolute;
+       left: 0%;
+         width: 300px;
+         height: 270px;
+         top: 0%;
+         border-radius: 20px;
+        margin-right: 1000px;
+        }
+     .grppic4{
+       position: absolute;
+       left: 0%;
+         width: 300px;
+         height: 270px;
+         top: 0%;
+         border-radius: 20px;
+        margin-left: 1000px;
+        }
+     #pop1{
+          background-color: rgb(63, 147, 211);
+          text-decoration: line;
+       }
+     .con{
+       text-decoration: dashed;
+     }
+     /* catering.html */
+
+
 body{
-  background: url(/static/images/back.jpg) no-repeat center center fixed;
-  background-size: cover;
+
+    background-repeat:no-repeat;
+    background-position:fixed;
+     background-size: cover;
  }
-.navbar-brand img{
-    width:80px
-    }
-.con{
-  right: 50%;
-}
-#header{
-    height:65px;
-}
-.nav-link{
-    color: aliceblue;
-}
-.nav-link:hover{
-    color:rgb(92, 191, 230);
-}
-#marquee{
-    color: rgb(17, 0, 255);
-    background-color: aliceblue;
-}
-#cateringblog{
-  position: absolute;
-    top: 20%;
-    left: 23%;
-    display: inline;
-    width: 72%;
-    font-size: 23px;
-    padding: 12px;
-    color: #f0f9ff;
-    font-weight: bold;
-}
-#Musicalblog{
-  position: absolute;
-    top: 20%;
-    left: 5%;
-    display: inline;
-    width: 72%;
-    font-size: 23px;
-    padding: 12px;
-    color: #f0f9ff;
-    font-weight: bold;
-}
-#Weddingblog{
-  position: absolute;
-    top: 20%;
-    left: 23%;
-    display: inline;
-    width: 72%;
-    font-size: 23px;
-    padding: 12px;
-    color: #f0f9ff;
-    font-weight: bold;
-}
-#BirthdayBlog{
-  position: absolute;
-    top: 20%;
-    left: 5%;
-    display: inline;
-    width: 72%;
-    font-size: 23px;
-    padding: 12px;
-    color: #f0f9ff;
-    font-weight: bold;
-}
-#footer{
-    position: absolute;
-    top: 220%;
-    width: 100%;
+     /* history.css */
+     #customers {
+       font-family: Arial, Helvetica, sans-serif;
+      
+     }
+     
+     #customers td, #customers th {
+       border: 1px solid #ddd;
+       padding: 20px;
+     }
+     #customers th {
+       padding-top: 20px;
+       padding-bottom: 12px;
+       text-align: left;
+     }
+     
+     table, tr, td {
+       border: 1px solid;
+       border-color: aqua;
+     }
+     /* <!--contact.css--> */
+     * {
+         box-sizing: border-box;
+       }
+     
+       /* Style inputs */
+       input[type=text], select, textarea {
+         width: 100%;
+         padding: 12px;
+         border: 1px solid #ccc;
+         margin-top: 6px;
+         margin-bottom: 16px;
+         resize: vertical;
+       }
+     
+       input[type=submit] {
+         background-color: #04AA6D;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         cursor: pointer;
+       }
+     
+       input[type=submit]:hover {
+         background-color: #45a049;
+       }
+     
+       /* Style the container/contact section */
+       .container {
+         border-radius: 5px;
+         background-color: rgba(108, 185, 245, 0.607);
+         padding: 10px;
+         border: none;
+         outline: none;
+     
+     
+         display: inline-block;
+         color: rgb(255, 255, 255);
+     
+     
+       }
+     
+       /* Create two columns that float next to eachother */
+       .column {
+         float: left;
+         width: 50%;
+         margin-top: 6px;
+         padding: 20px;
+         color: #edadbe;
+       }
+     
+       /* Clear floats after the columns */
+       .row:after {
+         content: "";
+         display: table;
+         clear: both;
+       }
+     
+       /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+       @media screen and (max-width: 600px) {
+         .column, input[type=submit] {
+           width: 100%;
+           margin-top: 0;
+         }
+       }
+     
+       #fname{
+         width: 100%;
+         background-color: antiquewhite;
+       }
+       #subject{
+         border-bottom: 2px solid rgb(26, 245, 114);
+         color: rgb(0, 75, 250);
+       }
+       #name{
+         border-bottom: 2px solid rgb(26, 245, 114);
+         color: rgb(0, 75, 250);
+       }
+       #email{
+         border-bottom: 2px solid rgb(26, 245, 114);
+         color: rgb(0, 75, 250);
+       }
+       #state{
+         border-bottom: 2px solid rgb(26, 245, 114);
+         color: rgb(0, 75, 250);
+       }
+       .column{
+         font-size: 20px;
+         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     
+         border-radius: 20px;
+       }
+       .cust_btn1{
+         font-size: 22;
+         background: none;
+         cursor: pointer;
+         outline: none;
+         width: 35%;
+         margin: 12px 0;
+         padding: 6px;
+         border-radius: 90px;
+         border: 2px solid rgb(245, 183, 26);
+         font-weight: bold;
+       }
+       .cust_btn1:hover{
+         color: rgb(250, 234, 8);
+         background: rgb(20, 173, 238);
+         outline: none;
+       }
+       body{
+         background: url(/static/images/back.jpg) no-repeat center center fixed;
+         background-size: cover;
+        }
+        /* faqs.css */
+        .heading{
+         padding: 12px;
+     }
+     .heading h1{
+         font-size: 42px;
+         font-weight: bolder;
+         color: rgb(90, 4, 14);
+     }
+     .heading h1:hover{
+         font-size: 44px;
+         font-weight: bolder;
+         color: rgb(0, 0, 0);
+         cursor: pointer;
+     }
+     .rows{
+       width: 1300px;
+       height: 700px;
+         text-align: center;
+         border-radius: 20px;
+         background-color: rgb(99, 209, 240);
+         position: absolute;
+         left: 120px;
+         top: 30%;
+         opacity: 0.8;
+     }
+     body{
+       background: url(/static/images/back.jpg) no-repeat center center fixed;
+       background-size: cover;
+      }
+      #pop1{
+          background-color: rgb(63, 147, 211);
+          text-decoration: line;
+       }
+       .cname{
+         background-color: rgb(174, 203, 241);
+       }
+       .cemail{
+         background-color: rgb(174, 203, 241);
+       }
+       .cstate{
+         background-color: rgb(174, 203, 241);
+       }
+       .csubject{
+         background-color: rgb(174, 203, 241);
+       }
+       .column input,select {
+         color: rgb(245, 247, 251);
+     }
+     .column select:hover{
+     border: 1px outset rgb(1, 149, 255);
+     
+     }
+     #h1id{
+       color: #62f1af;
+     }
+     #name{
+       color: aliceblue;
+     }
+     #email{
+       color: aliceblue;
+     }
+     #subject{
+       color: aliceblue;
+     }
+     #state{
+       color: aliceblue;
+     }
+     #label1{
+       color: aliceblue;
+     }
+     #label2{
+       color: aliceblue;
+     }
+     #label3{
+       color: aliceblue;
+     }
+     #label4{
+       color: aliceblue;
+     }
+     
 
-}
-#g img{
-    width: 2%;
-
-}
- #quote{
-    font-weight: bold;
-    text-shadow: 0 0 22px rgb(150, 240, 240);
-    color: rgb(4, 59, 105);
-    font-size: 26px;
-    padding: 0px 64px;
-}
-
-.heading{
-    padding: 12px;
-}
-.heading h1{
-    font-size: 42px;
-    font-weight: bolder;
-    color: rgb(90, 4, 14);
-}
-.heading h1:hover{
-    font-size: 44px;
-    font-weight: bolder;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-}
-.grp1{
-    width: 1300px;
-    height: 270px;
-    /* padding: 120px;  */
-    text-align: center;
-    border-radius:20px;
-    background-color: rgb(99, 209, 240);
-    position: absolute;
-    left: 120px;
-    top: 40%;
-    opacity:0.8;
-    text-align: 3.0;
-}
-.grp1 h3{
-  display: inline-block;
-}
-#grp1m{
-  text-shadow: 0 0 10px rgb(255 255 255);
-    color: #440854;
-    font-weight: bold;
-    position: absolute;
-    left: 50%;
-    top: 1%;
-}
-.grp2{
-  width: 1300px;
-  height: 270px;
-    text-align: center;
-    border-radius: 20px;
-    background-color: rgb(99, 209, 240);
-    position: absolute;
-    left: 120px;
-    top: 85%;
-    opacity: 0.8;
-}
-.grp2 h3{
-  display: inline-block;
-}
-#grp2m{
-  text-shadow: 0 0 10px rgb(255 255 255);
-    color: #440854;
-    font-weight: bold;
-    position: absolute;
-    left: 30%;
-    top: 1%;
-}
-.grp3{
-    width: 1300px;
-    height: 270px;
-    text-align: center;
-    border-radius: 20px;
-    background-color: rgb(99, 209, 240);
-    position: absolute;
-    left: 125px;
-    top: 130%;
-    opacity: 0.8;
-
-}
-.grp3 h3{
-  display: inline-block;
-}
-#grp3m{
-  text-shadow: 0 0 10px rgb(255 255 255);
-    color: #440854;
-    font-weight: bold;
-    position: absolute;
-    left: 50%;
-    top: 1%;
-}
-.grp4{
-    width: 1300px;
-    height: 270px;
-    text-align: center;
-    border-radius: 20px;
-    background-color: rgb(99, 209, 240);
-    position: absolute;
-    left: 120px;
-   top: 180%;
-   opacity: 0.8;
-}
-.grp4 h3{
-  display: inline-block;
-}
-#grp4m{
-  text-shadow: 0 0 10px rgb(255 255 255);
-    color: #440854;
-    font-weight: bold;
-    position: absolute;
-    left: 30%;
-    top: 1%;
-}
-.grppic1{
-  position: absolute;
-  left: 0%;
-    width: 300px;
-    height: 270px;
-    top: 0%;
-    border-radius: 20px;
-   margin-right: 1000px;
-   }
-.grppic3{
-  position: absolute;
-  left: 0%;
-    width: 300px;
-    height: 270px;
-    top: 0%;
-    border-radius: 20px;
-   margin-right: 1000px;
-   }
-.grppic4{
-  position: absolute;
-  left: 0%;
-    width: 300px;
-    height: 270px;
-    top: 0%;
-    border-radius: 20px;
-   margin-left: 1000px;
-   }
-#pop1{
-     background-color: rgb(63, 147, 211);
-     text-decoration: line;
-  }
-.con{
-  text-decoration: dashed;
-}
-/* weddinghall.html */
-.cust_book2{
+     /* dealers history */
+     .cust_book1{
+  box-shadow: 0 0 22px rgb(62 145 224);
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 78px 25px;
@@ -245,100 +659,44 @@ body{
     border-radius: 20px;
     position: absolute;
     top: 30%;
-   left: 31%;
-   width: 45%;
+   left: 17%;
+   width: 68%;
 }
-.cust_book2 h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #cb515d;
+.cust_book1 h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
     display: inline-block;
     font-size: 40px;
-    border-bottom: 2px solid rgb(171, 244, 212);
+    border-bottom: 2px solid rgb(255, 0, 0);
     margin-bottom: 15px;
     padding: 4px 0;
-}
-.cust_btn2{
-    position: absolute;
-    top: 90%;
-    left: 35%;
-    font-size: 22;
-    background: none;
-    cursor: pointer;
-    outline: none;
-    width: 35%;
-    margin: 12px 0;
-    padding: 6px;
-    border-radius: 90px;
-    border: 2px solid rgb(245, 183, 26);
     font-weight: bold;
-} 
-.cust_btn2:hover{
-    color: rgb(250, 234, 8);
-    background: rgb(20, 173, 238);
-    outline: none;
-} 
-.box{
-    
-    padding: 2px;
-    margin:50px 0px;
-    width: 100%;
 }
-.box input,select {
-    background: none;
-    text-align: center;
-    background: none;
-    font-size: 20px;
-    width: 65%;
-    outline: none;
-    border: none;
-    color: rgb(245, 247, 251);
-    padding: 5px 10px;
-    border-bottom: 2px solid rgb(141, 245, 182);
-}
-.box select:hover{
-border: 1px outset rgb(1, 149, 255);
 
-}
-/* .box input:hover{
-    border: 1px outset rgb(4, 230, 255);
-    border-radius: 8%;
-} */
-/* catering.html */
-
- 
-/* history.css */
 #customers {
+  box-shadow: 0 0 22px rgb(62 145 224);
   font-family: Arial, Helvetica, sans-serif;
  
 }
 
+table, tr, td {
+  border: 1px solid;
+  border-color: aqua;
+}
+
 #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 20px;
+  border: 3px solid #ddd;
+  padding: 12px;
 }
 #customers th {
   padding-top: 20px;
   padding-bottom: 12px;
   text-align: left;
 }
- .cust_book1{
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 78px 25px;
-    background-color: rgba(108, 185, 245, 0.607);
-    /* color: rgb(255, 255, 255); */
-    border-radius: 20px;
-    position: absolute;
-    top: 30%;
-   left: 31%;
-   width: 45%;
-} 
-
-
-</style>
+     
+     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark" id="header"  >
+<nav class="navbar navbar-expand-lg bg-dark " id="header"  >
     <a class="navbar-brand" href="/dealerhome"><img src="/static/images/logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -347,24 +705,53 @@ border: 1px outset rgb(1, 149, 255);
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="/contact" class="con">CONTACT</a>
+          <a class="nav-link" href="/contact1" class="con">CONTACT</a>
+        </li>
+        
+           <li class="nav-item">
+          <a class="nav-link" href="/about1">ABOUT</a>
+        </li>
+      
         </li>
            <li class="nav-item">
-          <a class="nav-link" href="/about">ABOUT</a>
+          <a class="nav-link" href="/faqs1">FAQ's</a>
         </li>
-        </li>
-           <li class="nav-item">
-          <a class="nav-link" href="/faqs">FAQ's</a>
-        </li>
+        {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           DEALER HISTORY
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/dealerhistory">caterings</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory1">Musical concerts</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory2">wedding</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory3">Birthday</a></li>
+          </ul>
+
+        </div>
+        {% else %}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+    <strong>Please Sign In</strong>
+  </div>
+  {% endif %}
 
 
-        <li class="nav-item">
-          <a class="nav-link" href="/history">HISTORY</a>
-        </li>
+
+
+       
+        {% if user.is_authenticated %}
           <li class="nav-item">
-          <a class="nav-link" href="/userlogin">Log out</a>
+          <a class="nav-link" href="/loginout2">LOG OUT</a>
+          </li>
+          {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/dealerlogin">LOGIN</a>
         </li>
+         
+      {% endif %}
       </ul>
+
 
       <!-- <form class="d-flex" role="search">
 

@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-{% block title %} Contact {% endblock %}
+{% extends 'dealerbase.html' %}
+{% block title %} Dealer Contact {% endblock %}
 {% block body %}
 <div class="heading">
   <h1 align="center">OUT LINING</h1>
@@ -13,7 +13,7 @@
         <u><h1 id="h1id">Contact Us</h1></u>
         <p>Swing by for a cup of coffee, or leave us a message:</p>
       </div>
-      <a href="/home">
+      <a href="/dealerhome">
         <img src="/static/images/homeicon.png" class="contacthomeicon">
       </a>
       <div class="row">
@@ -21,21 +21,21 @@
           <img src="/static/images/map.jpg" style="width:100%">
         </div>
         <div class="column">
-          <form action="http://127.0.0.1:8000/contact/" method="post">
+          <form action="http://127.0.0.1:8000/contact1/" method="post">
             {% csrf_token %}
             <label for="name" id="label1">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name.." class="cname" required>
+            <input type="text" id="name" name="dealername" placeholder="Your name.." class="cname" required>
             <label for="name" id="label2">email</label>
-            <input type="text" id="email" name="email" placeholder="email.." class="cemail" required>
+            <input type="text" id="email" name="dealeremail" placeholder="email.." class="cemail" required>
             <label for="state" id="label3">State</label>
-            <select id="state" name="state" class="cstate" required>
+            <select id="state" name="dealerstate" class="cstate" required>
               <option value="Andhra pradesh" >Andhra pradesh</option>
               <option value="Kerala">Kerala</option>
               <option value="Tamilnadu" >Tamilnadu</option>
             </select>
             <br>
             <label for="subject" id="label4">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Minimum 20 words" style="height:170px" class="csubject" required></textarea>
+            <textarea id="subject" name="dealersubject" placeholder="Minimum 20 words" style="height:170px" class="csubject" required></textarea>
             <button class="cust_btn1">Submit</button>
           </form>
         </div>
@@ -46,5 +46,5 @@
 
 </div>
 </div>
-{% include 'messages.html' %}
+<!-- {% include 'messages.html' %} -->
 {% endblock %}

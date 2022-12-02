@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} History {% endblock %}
+{% block title %} Dealer History {% endblock %}
 {% block body %}
-{% if user.is_authenticated %}
 <style>
   .alert {
     padding: 20px;
-    background-color: #e5f31b;
+    background-color: #5936f4;
     color: white;
     opacity:0.8;
     text-align: center;
@@ -26,6 +25,7 @@
     color: black;
   }
   </style>
+  {% if user.is_authenticated %}
     <div class="heading">
       <h1 align="center">OUT LINING</h1>
     </div>
@@ -34,41 +34,42 @@
             <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
         </marquee>
       </div>
-      <div align="center" class="cust_book1" >
-        <u><h1 class="book"">Booking History</h1></u>
+      <div align="center" class="cust_book3" >
+        <u><h1 class="book">Avaliable Halls</h1></u>
         <a href="/home">
-          <img src="/static/images/homeicon.png" class="historyhomeicon">
+          <img src="/static/images/homeicon.png" class="weddingbookhomeicon">
         </a>
+
 <table id="customers">
   <tr>
     <th>S.No</th>
+    <th>Service Name</th>
     <th>Name</th>
-    <th>Event</th>
-    <th>Date</th>
+    <th>Mobile</th>
+    <th>Email</th>
   </tr>
   <tbody>
-  {% for i in al %} 
+  {% for j in ol %} 
   <tr>  
     <th scope="row">{{forloop.counter}}</th>
-    <td >{{i.cname}}</td>
-    <td>{{i.type}}</td>
-     <td>{{i.cdate}}</td>
+    <td >{{j.wname}}</td>
+    <td >{{j.name}}</td>
+    <td>{{j.mobile}}</td>
+    <td>{{j.email}}</td>
   </tr>
   {% endfor %}
 </tbody>
 </table>
-      
-      
       </div>
     </form>
     {% else %}
 
-
-    <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
-    <strong>Please Sign In</strong>
-  </div>
-    {% endif %}
+    <meta http-equiv = "refresh" content = "1; url = /" />
+      <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+      <strong>Please Sign In</strong>
+    </div>
+              {% endif %}
 
 
 </body>

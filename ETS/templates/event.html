@@ -1,6 +1,137 @@
 {% extends 'base.html' %}
 {% block title %} Event {% endblock %}
 {% block body %}
+<style>
+/* .alert {
+  padding: 20px;
+  background-color: #5936f4;
+  color: white;
+  opacity:0.8;
+  text-align: center;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+} */
+.l1{
+  text-indent: 75px;
+}
+.l2{
+  text-indent: 40px;
+}
+.l3{
+  text-indent: 94px;
+}
+.l4{
+  text-indent: 99px;
+}
+.l5{
+  text-indent: 118px;
+}
+.l6{
+  text-indent: 35px;
+}
+.eventhtml{
+    box-shadow: 0 0 22px rgb(62 145 224);
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(108, 185, 245, 0.607);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    width: 45%;
+}
+.eventhtml h1{
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    margin-bottom: 15px;
+    padding: 4px 0;
+    font-weight: bold; 
+}
+.cust_book2 h1:hover{
+  width: 60%;
+}
+.box{
+  padding: 2px;
+  margin: 50px 0px;
+  width: 100%;
+ 
+}
+.box input,select{
+    text-align: center;
+    background: none;
+    font-size: 20px;
+    width: 65%;
+    outline: none;
+    border: none;
+    color: rgb(245, 247, 251);
+    padding: 5px 10px;
+    border-bottom: 2px solid rgb(245, 183, 26);
+}
+input.sname{
+  padding: 5px 10px;
+}
+/* .closebtn{
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    font-size: 22;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    width: 35%;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 90px;
+    border: 2px solid rgb(245, 183, 26);
+    font-weight: bold;
+} 
+
+.closebtn:hover{
+    color: rgb(250, 234, 8);
+    background: rgb(20, 173, 238);
+    outline: none;
+} */
+.alert {
+	  padding: 20px;
+	  background-color: #f44336;
+	  color: white;
+	}
+
+	.closebtn {
+	  margin-left: 15px;
+	  color: white;
+	  font-weight: bold;
+	  float: right;
+	  font-size: 22px;
+	  line-height: 20px;
+	  cursor: pointer;
+	  transition: 0.3s;
+	}
+
+	.closebtn:hover {
+	  color: black;
+	}
+
+
+</style>
+{% if user.is_authenticated %}
+
 <div class="heading">
  
   <h1 align="center"top="40%">OUT LINING</h1>
@@ -10,26 +141,27 @@
         <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
     </marquee>
   </div>
-<div align="center" class="cust_book1" >
+<div align="center" class="eventhtml" >
   <u><h1>Creating a new Event</h1></u>
   <form class="box" action="http://127.0.0.1:8000/event/" method="post" id="mrt">
   {% csrf_token %}
-
-Type of event:<select name="tp"  class="drop" required>
+  <a href="/home">
+    <img src="/static/images/homeicon.png" class="eventhomeicon">
+  </a>
+<label class="l1">Type of event:</label><select name="tp"  class="drop" required>
   <!-- <option value="None">None</option> -->
-  <option value="Marriage">Marriage</option>
-  <option value="Party">Party</option>
-  <option value="Birthday Party">Birthday Party</option>
-</select><br><br>
-Name of the customer:<input type="text" name="name" class="cust" required><br><br>
-Date of the event:<input type="date" name="date"  class="date" required><br><br>
-StartTime:<input type="time" name="stime"  class="st" required><br><br>
-EndTime:<input type="time" name="etime"  class="et" required><br><br>
-
-Venue: <input type="text" name="venue" id="n6" class="venu" required><br><br>
-
+  <option value="Caterings">Caterings</option>
+  <option value="Musicicalconcert">Musicical concert</option>
+  <option value="WeddingHall">Wedding Hall</option>
+  <option value="BirthdayParty">Birthday Party</option>
+</select><br>
+Name of the customer:<input type="text" name="name" class="cust" required><br>
+<label class="l2">Date of the event:</label><input type="date" name="date"  class="date" required><br><br>
+<label class="l3">StartTime:</label><input type="time" name="stime"  class="st" required><br><br>
+<label class="l4">EndTime:</label><input type="time" name="etime"  class="et" required><br><br>
+<label class="l5">Venue: </label><input type="text" name="venue" id="n6" class="venu" required><br>
 <div>
-  Is food required:
+  <label class="l6"> Is food required:</label>
     <select name="food" id="n7" class="food" required>
       <!-- <option value="None">None</option> -->
       <option value="Yes">Yes</option>
@@ -41,6 +173,25 @@ Venue: <input type="text" name="venue" id="n6" class="venu" required><br><br>
 </div>
 </form>
 </div> 
+{% else %}
 
+<meta http-equiv = "refresh" content = "1; url = /" />
+<!--    <div class="alert">-->
+<!--    <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>-->
+<!--    <strong>Please Sign In</strong>-->
+<div>
+	{% for msg in messages %}
+   <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Please Login</strong> {{msg}}
+</div>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+      {% endfor %}
+  </div>
+            {% endif %}
 <!-- {% include 'messages.html' %} -->
 {% endblock %}
