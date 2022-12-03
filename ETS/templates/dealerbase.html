@@ -716,27 +716,19 @@ table, tr, td {
            <li class="nav-item">
           <a class="nav-link" href="/faqs1">FAQ's</a>
         </li>
-        {% if user.is_authenticated %}
+
         <div class="dropdown">
           <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
            DEALER HISTORY
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/dealerhistory">caterings</a></li>
-            <li><a class="dropdown-item" href="/dealerhistory1">Musical concerts</a></li>
-            <li><a class="dropdown-item" href="/dealerhistory2">wedding</a></li>
-            <li><a class="dropdown-item" href="/dealerhistory3">Birthday</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory00">caterings</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory01">Musical concerts</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory02">wedding</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory03">Birthday</a></li>
           </ul>
 
         </div>
-        {% else %}
-    <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
-    <strong>Please Sign In</strong>
-  </div>
-  {% endif %}
-
-
 
 
        

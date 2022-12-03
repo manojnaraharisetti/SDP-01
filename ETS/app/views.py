@@ -79,6 +79,49 @@ def dealerhistory3(request):
     messages.error(request,"PLEASE LOGIN!")
     return redirect('/')
 
+
+
+def dealerhistory00(request):
+    if request.user.is_authenticated:
+        username0=request.user.username
+        allevent = catering.objects.filter(username=username0)
+        cont = {'bl': allevent}
+        return render(request, 'cateringdealerhistory.html', cont)
+
+    messages.error(request,"Please login")
+    return redirect('/dealerhome')
+
+def dealerhistory01(request):
+    if request.user.is_authenticated:
+        username1=request.user.username
+        allevent1 = Musicalconcertm.objects.filter(username=username1)
+        cont1 = {'cl': allevent1}
+        return render(request, 'Musicdealerhistory.html',cont1)
+
+    messages.error(request,"Please login")
+    return redirect('/dealerhome')
+
+def dealerhistory02(request):
+    if request.user.is_authenticated:
+        username2=request.user.username
+        allevent2 = weddinghalls.objects.filter(username=username2)
+        cont1 = {'dl': allevent2}
+        return render(request, 'Weddingdealerhistory.html',cont1)
+
+    messages.error(request,"Please login")
+    return redirect('/dealerhome')
+
+
+def dealerhistory03(request):
+    if request.user.is_authenticated:
+        username3=request.user.username
+        allevent3 = BirthdayParty.objects.filter(username=username3)
+        cont1 = {'el': allevent3}
+        return render(request, 'Birthdaydealerhistory.html',cont1)
+
+    messages.error(request,"PLEASE LOGIN!")
+    return redirect('/dealerhome')
+
 def faqs(request):
     return render(request,'faqs.html')
 
@@ -96,20 +139,6 @@ def about(request):
 
 def dabout(request):
     return render(request,'dealerabout.html')
-
-
-
-def weddinghall(request):
-    return render(request ,"weddinghall.html")
-
-def cateringservice(request):
-    return render(request ,'caterings.html')
-
-def Musicalconcert(request):
-    return render(request ,"Musicconcerts.html")
-
-def BirthdayParties(request):
-    return render(request ,"Birthday.html")
 
 def cateringbook(request):
     if request.user.is_authenticated:
@@ -272,7 +301,12 @@ def Caterings(request):
         cat = catering(type=stype,sname=Servicename,namemanu=Name1,pricemanu=PPrice,mobile=Mobile,emailmanu=Email,username=username)
         cat.save()
         messages.success(request,"Successfully added " )    
-    return render(request,'caterings.html')
+        return render(request,'caterings.html')
+    if request.user.is_authenticated:
+        return render(request,'caterings.html')
+    else:
+         messages.error(request, "PLEASE LOGIN!")
+    return redirect('/dealerhome')
 
 def MusicConcerts(request):
     if request.method == 'POST':
@@ -290,8 +324,12 @@ def MusicConcerts(request):
          Music = Musicalconcertm(type1=stype1,conname=cname,name=Name,Address=address,City=City,Tprice=totprice,mobile=Mobile,email=Email,username=username)
          Music.save()
          messages.success(request,"Successfully added " )  
-
-    return render(request,'Musicconcerts.html')
+         return render(request,'Musicconcerts.html')
+    if request.user.is_authenticated:
+        return render(request,'Musicconcerts.html')
+    else:
+         messages.error(request, "PLEASE LOGIN!")
+    return redirect('/dealerhome')
 
 def weddinghall1(request):
     if request.method == 'POST':
@@ -309,8 +347,12 @@ def weddinghall1(request):
          weddinghall1 = weddinghalls(type2=stype2,wname=cname,name=Name,Address=address,City=City,price=totprice,mobile=Mobile,email=Email,username=username)
          weddinghall1.save()
          messages.success(request,"Successfully added " )  
-
-    return render(request,'weddinghall.html')
+         return render(request,'weddinghall.html')
+    if request.user.is_authenticated:
+        return render(request,'weddinghall.html')
+    else:
+         messages.error(request, "PLEASE LOGIN!")
+    return redirect('/dealerhome')
 
 
 def Birthday(request):
@@ -329,8 +371,12 @@ def Birthday(request):
         party = BirthdayParty(type3=stype3,birthdayname=venue,birthdayame=bname,birthdayAddress=Address,birthdayCity=City,birthdayprice=Price,birthdaymobile=Phone,birthdayemail=email,username=username)
         party.save()
         messages.success(request,"Successfully added " )  
-
-    return render(request,'Birthday.html')
+        return render(request,'Birthday.html')
+    if request.user.is_authenticated:
+        return render(request,'Birthday.html')
+    else:
+         messages.error(request, "PLEASE LOGIN!")
+    return redirect('/dealerhome')
 
 
 def contactform(request):
