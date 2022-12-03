@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block title %} History {% endblock %}
 {% block body %}
+<body>
 {% if user.is_authenticated %}
 <style>
   .alert {
     padding: 20px;
     background-color: #e5f31b;
-    color: white;
+    color: rgb(199, 22, 22);
     opacity:0.8;
     text-align: center;
   }
@@ -25,6 +26,7 @@
   .closebtn:hover {
     color: black;
   }
+
   </style>
     <div class="heading">
       <h1 align="center">OUT LINING</h1>
@@ -62,8 +64,6 @@
       </div>
     </form>
     {% else %}
-
-
     <div class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
     <strong>Please Sign In</strong>

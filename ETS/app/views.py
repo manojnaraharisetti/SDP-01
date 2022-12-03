@@ -353,11 +353,11 @@ def dealercontacts1(request):
 
 def loginout(request):
     logout(request)
-    return redirect('/userlogin')
+    return redirect('/')
 
 def loginout2(request):
     logout(request)
-    return redirect('/dealerlogin')
+    return redirect('/dealerhome')
 
 
 
