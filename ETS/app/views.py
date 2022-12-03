@@ -76,7 +76,7 @@ def dealerhistory3(request):
         cont1 = {'el': allevent3}
         return render(request, 'Birthdaydealerhistory.html',cont1)
 
-    messages.error(request,"Please login")
+    messages.error(request,"PLEASE LOGIN!")
     return redirect('/')
 
 def faqs(request):
@@ -112,24 +112,36 @@ def BirthdayParties(request):
     return render(request ,"Birthday.html")
 
 def cateringbook(request):
-    allevent1 = catering.objects.all()
-    cont1 = {'kl': allevent1}
-    return render(request, 'cateringbook.html',cont1)
+    if request.user.is_authenticated:
+        allevent1 = catering.objects.all()
+        cont1 = {'kl': allevent1}
+        return render(request, 'cateringbook.html',cont1)
+    messages.error(request, "PLEASE LOGIN!")
+    return redirect('/')
 
 def Musicbook(request):
-    allevent2 = Musicalconcertm.objects.all()
-    cont2 = {'pl': allevent2}
-    return render(request, 'concertbook.html',cont2)
+    if request.user.is_authenticated:
+       allevent2 = Musicalconcertm.objects.all()
+       cont2 = {'pl': allevent2}
+       return render(request, 'concertbook.html',cont2)
+    messages.error(request, "PLEASE LOGIN!")
+    return redirect('/')
 
 def Birthdaybook(request):
-    allevent4 = BirthdayParty.objects.all()
-    cont4 = {'il': allevent4}
-    return render(request, 'birthdaybook.html',cont4)
+    if request.user.is_authenticated:
+        allevent4 = BirthdayParty.objects.all()
+        cont4 = {'il': allevent4}
+        return render(request, 'birthdaybook.html',cont4)
+    messages.error(request, "PLEASE LOGIN!")
+    return redirect('/')
 
 def weddingbook(request):
-    allevent3 = weddinghalls.objects.all()
-    cont3 = {'ol': allevent3}
-    return render(request, 'weddingbook.html',cont3)
+    if request.user.is_authenticated:
+        allevent3 = weddinghalls.objects.all()
+        cont3 = {'ol': allevent3}
+        return render(request, 'weddingbook.html',cont3)
+    messages.error(request, "PLEASE LOGIN!")
+    return redirect('/')
     
 def userloginuser(request):
     if request.method == 'POST':
@@ -178,7 +190,7 @@ def userregisteruser(request):
             passwd = request.POST['password']
             date = datetime.date.today()
             if User.objects.filter(username=username).exists():
-                # messages.success(request,"Username already exists")
+                messages.success(request,"Username already exists")
                 return redirect('/userregister')
             user3 = User.objects.create_user(first_name = fname, last_name = lname, username = username , password = passwd , email = email, date_joined = date)
             user3.save()
@@ -195,6 +207,9 @@ def dealerregisteruser(request):
         username = request.POST['uname']
         passwd = request.POST['password']
         date = datetime.date.today()
+        if User.objects.filter(username=username).exists():
+            messages.success(request,"Username already exists")
+            return redirect('/dealerregister')
         user = User.objects.create_user(first_name = fname, last_name = lname, username = username , password = passwd, email = email, date_joined = date,is_staff=True)
         user.save()
         print('user created')
@@ -231,7 +246,13 @@ def event1(request):
         
 
         messages.success(request,"Event is successfuly Booked !verify your mail" )
-    return render(request,'event.html')
+        return render(request,'event.html')
+    if request.user.is_authenticated:
+        return render(request,'event.html')
+    else:
+         messages.error(request, "PLEASE LOGIN!")
+    return redirect('/')
+
 
 
 
