@@ -2,28 +2,6 @@
 {% block title %} Event {% endblock %}
 {% block body %}
 <style>
-/* .alert {
-  padding: 20px;
-  background-color: #5936f4;
-  color: white;
-  opacity:0.8;
-  text-align: center;
-}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-} */
 .l1{
   text-indent: 75px;
 }
@@ -86,27 +64,6 @@
 input.sname{
   padding: 5px 10px;
 }
-/* .closebtn{
-    position: absolute;
-    top: 90%;
-    left: 35%;
-    font-size: 22;
-    background: none;
-    cursor: pointer;
-    outline: none;
-    width: 35%;
-    margin: 12px 0;
-    padding: 6px;
-    border-radius: 90px;
-    border: 2px solid rgb(245, 183, 26);
-    font-weight: bold;
-} 
-
-.closebtn:hover{
-    color: rgb(250, 234, 8);
-    background: rgb(20, 173, 238);
-    outline: none;
-} */
 .alert {
 	  padding: 20px;
 	  background-color: #a6f089;
@@ -149,7 +106,6 @@ input.sname{
     <img src="/static/images/homeicon.png" class="eventhomeicon">
   </a>
 <label class="l1">Type of event:</label><select name="tp"  class="drop" required>
-  <!-- <option value="None">None</option> -->
   <option value="Caterings">Caterings</option>
   <option value="Musicicalconcert">Musicical concert</option>
   <option value="WeddingHall">Wedding Hall</option>
@@ -163,7 +119,6 @@ Name of the customer:<input type="text" name="name" class="cust" required><br>
 <div>
   <label class="l6"> Is food required:</label>
     <select name="food" id="n7" class="food" required>
-      <!-- <option value="None">None</option> -->
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select> 
@@ -173,25 +128,9 @@ Name of the customer:<input type="text" name="name" class="cust" required><br>
 </div>
 </form>
 </div> 
-{% else %}
 
-<meta http-equiv = "refresh" content = "1; url = /" />
-<!--    <div class="alert">-->
-<!--    <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>-->
-<!--    <strong>Please Sign In</strong>-->
-<!-- <div>
-	{% for msg in messages %}
-   <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <strong>Please Login</strong> {{msg}}
-</div>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
 
-      {% endfor %}
-  </div>
-            {% endif %} -->
-<!-- {% include 'messages.html' %} -->
+
+            {% endif %} 
+
 {% endblock %}
