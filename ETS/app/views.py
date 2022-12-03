@@ -37,7 +37,22 @@ def history(request):
         return render(request, 'history.html', context)
     messages.error(request,"Please login")
     return redirect('/')
-
+def deleteevent(request):
+    if request.method == 'POST':
+        cname = request.POST['name']
+        type = request.POST['event']
+        cdate=request.POST['date']
+        if request.user.is_authenticated:
+            username = request.user.username
+            userdata = event.objects.filter(username=username,cname=cname,type=type,cdate=cdate)
+            userdata.delete()
+            messages.success(request,'Event deleted Sucessfully')
+            return render(request,'delete.html')
+    if request.user.is_authenticated:
+        return render(request, 'delete.html')
+    else:
+        messages.error(request, "PLEASE LOGIN!")
+    return redirect('/')
 def dealerhistory(request):
     if request.user.is_authenticated:
         username0=request.user.username
