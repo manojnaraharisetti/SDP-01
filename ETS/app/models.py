@@ -12,6 +12,7 @@ class event(models.Model):
     cetime=models.CharField(max_length=20)
     cvenue=models.CharField(max_length=200)
     cfood=models.CharField(max_length=10)
+    sdealer=models.CharField(max_length=200)
 
     def __str__(self):
         return ' Name : '+self.cname+' - Date : '+self.cdate

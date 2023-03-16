@@ -11,7 +11,7 @@
     color: rgb(255, 255, 255);
     border-radius: 20px;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 31%;
     width: 45%;
 }
@@ -88,19 +88,19 @@ input.sname{
   </div>
 <div align="center" class="cust_book2" >
     <u><h1>Wedding Hall</h1></u>
-          <form class="box" action='http://127.0.0.1:8000/weddinghall/' method="post">
+          <form class="box" action='/weddinghall/' method="post">
             {% csrf_token %}
             <a href="/dealerhome">
               <img src="/static/images/homeicon.png" class="weddinghomeicon">
             </a>
             Service Type:<select name="dp"  class="drop" required>
-              <option value="Wedding">Wedding Hall</option>
+              <option value="Wedding Hall">Wedding Hall</option>
             </select><br>
            Wedding Hall Name:<input type="text" name="bname" class="cust" required><br>
            Name:<input type="text" name="name" class="wsname" required><br>
            Address:<input type="text" name="address" class="addr" required><br>
            City:<input type="text" name="city" class="city" required><br>
-           Price:<input type="tel" name="price" class="capacity" required><br><br>
+           Price:<input type="number" name="price" class="capacity" required><br><br>
            Mobile:<input type="tel" name="num" class="num" required maxlength="10" pattern="^\d{10}$"><br><br>
            Email:<input type="email" name="emails" class="email" required><br>
            <div>

@@ -7,6 +7,13 @@
       rel="stylesheet">
       <link rel="shortcut icon" href="favicon.ico" type="static/images/favicon.png"> 
 <style>
+  .cateringsbg{
+  background-color: rgba(108, 185, 245, 0.607);
+}
+.alinea-left{
+  display: inline-block;
+}
+
    *{
     margin: 0;
     padding: 0;
@@ -150,7 +157,7 @@ body{
 }
 #footer{
     position: absolute;
-    top: 180%;
+    top: 150%;
     width: 100%;
 
 }
@@ -740,6 +747,13 @@ body{
  /* input.venu{
   background-color: rgb(174, 203, 241);
  } */
+ #checkboxes label {
+  display: inline-block;
+}
+
+.alinea-left{
+  margin-right: 50%;
+}
 
  /* history.css */
  .box{
@@ -825,23 +839,35 @@ table, tr, td {
         <li class="nav-item">
           <a class="nav-link" href="/history">HISTORY</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/event">CREATE A NEW EVENT</a>
-        </li>
+ <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CREATE A NEW EVENT
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/event"> Food caterings</a></li>
+            <li><a class="dropdown-item" href="/event1">Musical concerts</a></li>
+            <li><a class="dropdown-item" href="/event2">wedding Halls</a></li>
+            <li><a class="dropdown-item" href="/event3">Birthday Halls</a></li>
+          </ul>
+        </div>
+           </li>
         <div class="dropdown">
           <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             DEALERS
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/cateringbook"> Food caterings</a></li>
+            <li><a class="dropdown-item" href="/cateringbook">caterings</a></li>
             <li><a class="dropdown-item" href="/Musicbook">Musical concerts</a></li>
             <li><a class="dropdown-item" href="/weddingbook">wedding Halls</a></li>
-            <li><a class="dropdown-item" href="/Birthdaybook">Birthday Halls</a></li>
+            <li><a class="dropdown-item" href="/Birthdaybook">Birthday party</a></li>
           </ul>
         </div>
            </li>
           <li class="nav-item">
-          <a class="nav-link" href="/deleteevent">DELETE AN EVENT</a>
+          <a class="nav-link" href="/terms1">DELETE AN EVENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/terms">TERMS AND CONDITIONS</a>
         </li>
           {% if user.is_authenticated %}
           <li class="nav-item">

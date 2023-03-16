@@ -28,6 +28,20 @@ def home(request):
 
 def dealerhome(request):
     return render(request,'dealerhome.html')
+def terms(request):
+    return render(request,"termsandconditions1.html")
+def terms1(request):
+    if request.user.is_authenticated:
+        return render(request,"termsandconditions.html")
+    messages.success(request,"Please Login")
+    return redirect("/")
+def terms2(request):
+    if request.user.is_authenticated:
+        return render(request,"termsandconditions2.html")
+    messages.success(request,"Please Login")
+    return redirect("/dealerhome")
+def terms3(request):
+    return render(request,"termsandconditions3.html")
 
 def history(request):
     if request.user.is_authenticated:
@@ -35,8 +49,9 @@ def history(request):
         allevents = event.objects.filter(username=username)
         context = {'al': allevents}
         return render(request, 'history.html', context)
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/')
+
 def deleteevent(request):
     if request.method == 'POST':
         cname = request.POST['name']
@@ -44,15 +59,72 @@ def deleteevent(request):
         cdate=request.POST['date']
         if request.user.is_authenticated:
             username = request.user.username
-            userdata = event.objects.filter(username=username,cname=cname,type=type,cdate=cdate)
-            userdata.delete()
-            messages.success(request,'Event deleted Sucessfully')
+            if event.objects.filter(cname=cname).exists() and event.objects.filter(cdate=cdate).exists():
+                userdata = event.objects.filter(username=username,cname=cname,type=type,cdate=cdate)
+                userdata.delete()
+                messages.success(request,'Event deleted Sucessfully')
+                return render(request,'delete.html')
+            messages.success(request,"Data doesnot exists")
             return render(request,'delete.html')
     if request.user.is_authenticated:
         return render(request, 'delete.html')
     else:
-        messages.error(request, "PLEASE LOGIN!")
+        messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
+
+def dealerdeleteevent(request):
+    if request.method == 'POST':
+        cname = request.POST['cname']
+        type = request.POST['event']
+        oname=request.POST['oname']
+        if request.user.is_authenticated:
+            if type == "Caterings":
+                username = request.user.username
+                if catering.objects.filter(sname=cname).exists() and catering.objects.filter(namemanu=oname).exists():
+                    userdata = catering.objects.filter(username=username, sname=cname, type=type, namemanu=oname)
+                    print(userdata)
+                    userdata.delete()
+                    messages.success(request, 'Event deleted Sucessfully')
+                    return render(request, 'dealerdelete.html')
+                messages.success(request,"Data doesnot exists")
+                return render(request,'dealerdelete.html')
+            if type == "Musicical concert":
+                username = request.user.username
+                if Musicalconcertm.objects.filter(conname=cname).exists() and Musicalconcertm.objects.filter(name=oname).exists():  
+                    userdata1 = Musicalconcertm.objects.filter(username=username, conname=cname, type1=type, name=oname)
+                    print(userdata1)
+                    userdata1.delete()
+                    messages.success(request, 'Event deleted Sucessfully')
+                    return render(request, 'dealerdelete.html')
+                messages.success(request,"Data doesnot exists")
+                return render(request,'dealerdelete.html')
+            if type == "Wedding Hall":
+                username = request.user.username
+                if weddinghalls.objects.filter(wname=cname).exists() and weddinghalls.objects.filter(name=oname).exists():
+                    userdata2 = weddinghalls.objects.filter(username=username, wname=cname, type2=type, name=oname)
+                    userdata2.delete()
+                    messages.success(request, 'Event deleted Sucessfully')
+                    return render(request, 'dealerdelete.html')
+                messages.success(request,"Data doesnot exists")
+                return render(request,'dealerdelete.html')
+            if type == "Birthday Party":
+                username = request.user.username
+                if BirthdayParty.objects.filter(birthdayname=cname).exists() and BirthdayParty.objects.filter(birthdayame=oname).exists(): 
+                    userdata3= BirthdayParty.objects.filter(username=username, birthdayname=cname, type3=type, birthdayame=oname)
+                    userdata3.delete()
+                    messages.success(request, 'Event deleted Sucessfully')
+                    return render(request, 'dealerdelete.html')
+                messages.success(request,"Data doesnot exists")
+                return render(request,'dealerdelete.html')
+    if request.user.is_authenticated:
+        return render(request, 'dealerdelete.html')
+    else:
+        messages.success(request, "PLEASE LOGIN!")
+    return redirect('/')
+
+
+
+
 def dealerhistory(request):
     if request.user.is_authenticated:
         username0=request.user.username
@@ -60,7 +132,7 @@ def dealerhistory(request):
         cont = {'bl': allevent}
         return render(request, 'cateringdealerhistory.html', cont)
 
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/')
 
 def dealerhistory1(request):
@@ -70,7 +142,7 @@ def dealerhistory1(request):
         cont1 = {'cl': allevent1}
         return render(request, 'Musicdealerhistory.html',cont1)
 
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/')
 
 def dealerhistory2(request):
@@ -80,7 +152,7 @@ def dealerhistory2(request):
         cont1 = {'dl': allevent2}
         return render(request, 'Weddingdealerhistory.html',cont1)
 
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/')
 
 
@@ -91,7 +163,7 @@ def dealerhistory3(request):
         cont1 = {'el': allevent3}
         return render(request, 'Birthdaydealerhistory.html',cont1)
 
-    messages.error(request,"PLEASE LOGIN!")
+    messages.success(request,"PLEASE LOGIN!")
     return redirect('/')
 
 
@@ -103,7 +175,7 @@ def dealerhistory00(request):
         cont = {'bl': allevent}
         return render(request, 'cateringdealerhistory.html', cont)
 
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/dealerhome')
 
 def dealerhistory01(request):
@@ -113,7 +185,7 @@ def dealerhistory01(request):
         cont1 = {'cl': allevent1}
         return render(request, 'Musicdealerhistory.html',cont1)
 
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/dealerhome')
 
 def dealerhistory02(request):
@@ -123,7 +195,7 @@ def dealerhistory02(request):
         cont1 = {'dl': allevent2}
         return render(request, 'Weddingdealerhistory.html',cont1)
 
-    messages.error(request,"Please login")
+    messages.success(request,"Please login")
     return redirect('/dealerhome')
 
 
@@ -134,7 +206,7 @@ def dealerhistory03(request):
         cont1 = {'el': allevent3}
         return render(request, 'Birthdaydealerhistory.html',cont1)
 
-    messages.error(request,"PLEASE LOGIN!")
+    messages.success(request,"PLEASE LOGIN!")
     return redirect('/dealerhome')
 
 def faqs(request):
@@ -160,7 +232,7 @@ def cateringbook(request):
         allevent1 = catering.objects.all()
         cont1 = {'kl': allevent1}
         return render(request, 'cateringbook.html',cont1)
-    messages.error(request, "PLEASE LOGIN!")
+    messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
 
 def Musicbook(request):
@@ -168,7 +240,7 @@ def Musicbook(request):
        allevent2 = Musicalconcertm.objects.all()
        cont2 = {'pl': allevent2}
        return render(request, 'concertbook.html',cont2)
-    messages.error(request, "PLEASE LOGIN!")
+    messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
 
 def Birthdaybook(request):
@@ -176,7 +248,7 @@ def Birthdaybook(request):
         allevent4 = BirthdayParty.objects.all()
         cont4 = {'il': allevent4}
         return render(request, 'birthdaybook.html',cont4)
-    messages.error(request, "PLEASE LOGIN!")
+    messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
 
 def weddingbook(request):
@@ -184,7 +256,7 @@ def weddingbook(request):
         allevent3 = weddinghalls.objects.all()
         cont3 = {'ol': allevent3}
         return render(request, 'weddingbook.html',cont3)
-    messages.error(request, "PLEASE LOGIN!")
+    messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
     
 def userloginuser(request):
@@ -271,34 +343,150 @@ def event1(request):
         endtime = str(request.POST['etime'])
         venue = request.POST['venue']
         food = request.POST['food']
+        selectdealer = request.POST['sdeal']
         username = None
         if request.user.is_authenticated:
             username = request.user.username
         if starttime == endtime:
             messages.success(request,"Both times should not be equal")
             return redirect('/event')
-        print(typeofevent,Name,Date,starttime,endtime,venue,food)
-        book = event(type=typeofevent,cname=Name,cdate=Date,cstime=starttime,cetime=endtime,cvenue=venue,cfood=food,username=username)
+        print(typeofevent,Name,Date,starttime,endtime,venue,food,selectdealer)
+        book = event(type=typeofevent,cname=Name,cdate=Date,cstime=starttime,cetime=endtime,cvenue=venue,cfood=food,sdealer=selectdealer,username=username)
         book.save()
-        msg = "Your Event has been successfully booked"+"\n\n\n"+"EVENT DEATILS :"+"\n\n"+"Event Name :"+typeofevent+"\n\n"+"Name :"+Name+"\n\n"+"Date :"+Date+"\n"
+        msg = "Your Event has been successfully booked"+"\n\n\n"+"EVENT DEATILS :"+"\n\n"+"Event Name :"+typeofevent+"\n"+"Name :"+Name+"\n"+"Date :"+Date+"\n"+"Your Dealer  Service Name :"+selectdealer+"\n"
         send_mail('Event Confirmation',  # subject
                   msg,
                   'outlining25@gmail.com',  # from
                    [request.user.email],  # to
                   fail_silently=False,
                   )
-        
 
         messages.success(request,"Event is successfuly Booked !verify your mail" )
         return render(request,'event.html')
     if request.user.is_authenticated:
-        return render(request,'event.html')
+        allevent4 = catering.objects.all()
+        cont4 = {'il': allevent4}
+        return render(request,'event.html',cont4)
     else:
-         messages.error(request, "PLEASE LOGIN!")
+         messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
 
 
+def event2(request):
+    if request.method == 'POST':
+        typeofevent = request.POST['tp']
+        Name = request.POST['name']
+        Date = str(request.POST['date'])
+        starttime = str(request.POST['stime'])
+        endtime = str(request.POST['etime'])
+        venue = request.POST['venue']
+        food = request.POST['food']
+        selectdealer = request.POST['sdeal']
+        username = None
+        if request.user.is_authenticated:
+            username = request.user.username
+        if starttime == endtime:
+            messages.success(request, "Both times should not be equal")
+            return redirect('/event1')
+        print(typeofevent, Name, Date, starttime, endtime, venue, food,selectdealer)
+        book = event(type=typeofevent, cname=Name, cdate=Date, cstime=starttime, cetime=endtime, cvenue=venue,
+                     cfood=food,sdealer=selectdealer, username=username)
+        book.save()
+        msg = "Your Event has been successfully booked"+"\n\n\n"+"EVENT DEATILS :"+"\n\n"+"Event Name :"+typeofevent+"\n"+"Name :"+Name+"\n"+"Date :"+Date+"\n"+"Your Dealer  Service Name :"+selectdealer+"\n"
+        send_mail('Event Confirmation',  # subject
+                  msg,
+                  'outlining25@gmail.com',  # from
+                  [request.user.email],  # to
+                  fail_silently=False,
+                  )
 
+        messages.success(request, "Event is successfuly Booked !verify your mail")
+        return render(request, 'event1.html')
+    if request.user.is_authenticated:
+        allevent4 = Musicalconcertm.objects.all()
+        cont4 = {'il': allevent4}
+        return render(request, 'event1.html',cont4)
+    else:
+        messages.success(request, "PLEASE LOGIN!")
+    return redirect('/')
+
+
+def event3(request):
+    if request.method == 'POST':
+        typeofevent = request.POST['tp']
+        Name = request.POST['name']
+        Date = str(request.POST['date'])
+        starttime = str(request.POST['stime'])
+        endtime = str(request.POST['etime'])
+        venue = request.POST['venue']
+        food = request.POST['food']
+        selectdealer = request.POST['sdeal']
+        username = None
+        if request.user.is_authenticated:
+            username = request.user.username
+        if starttime == endtime:
+            messages.success(request, "Both times should not be equal")
+            return redirect('/event2')
+        print(typeofevent, Name, Date, starttime, endtime, venue, food,selectdealer)
+        book = event(type=typeofevent, cname=Name, cdate=Date, cstime=starttime, cetime=endtime, cvenue=venue,
+                     cfood=food,sdealer=selectdealer, username=username)
+        book.save()
+        msg = "Your Event has been successfully booked"+"\n\n\n"+"EVENT DEATILS :"+"\n\n"+"Event Name :"+typeofevent+"\n"+"Name :"+Name+"\n"+"Date :"+Date+"\n"+"Your Dealer  Service Name :"+selectdealer+"\n"
+        send_mail('Event Confirmation',  # subject
+                  msg,
+                  'outlining25@gmail.com',  # from
+                  [request.user.email],  # to
+                  fail_silently=False,
+                  )
+
+        messages.success(request, "Event is successfuly Booked !verify your mail")
+        return render(request, 'event2.html')
+    if request.user.is_authenticated:
+        allevent4 = weddinghalls.objects.all()
+        cont4 = {'il': allevent4}
+        return render(request, 'event2.html',cont4)
+    else:
+        messages.success(request, "PLEASE LOGIN!")
+    return redirect('/')
+
+
+def event4(request):
+    if request.method == 'POST':
+        typeofevent = request.POST['tp']
+        Name = request.POST['name']
+        Date = str(request.POST['date'])
+        starttime = str(request.POST['stime'])
+        endtime = str(request.POST['etime'])
+        venue = request.POST['venue']
+        food = request.POST['food']
+        selectdealer = request.POST['sdeal']
+        username = None
+        if request.user.is_authenticated:
+            username = request.user.username
+        if starttime == endtime:
+            messages.success(request, "Both times should not be equal")
+            return redirect('/event3')
+        print(typeofevent, Name, Date, starttime, endtime, venue, food,selectdealer)
+        book = event(type=typeofevent, cname=Name, cdate=Date, cstime=starttime, cetime=endtime, cvenue=venue,
+                     cfood=food, sdealer=selectdealer,username=username)
+        book.save()
+        msg = "Your Event has been successfully booked"+"\n\n\n"+"EVENT DEATILS :"+"\n\n"+"Event Name :"+typeofevent+"\n"+"Name :"+Name+"\n"+"Date :"+Date+"\n"+"Your Dealer  Service Name :"+selectdealer+"\n"
+        send_mail('Event Confirmation',  # subject
+                  msg,
+                  'outlining25@gmail.com',  # from
+                  [request.user.email],  # to
+                  fail_silently=False,
+                  )
+
+        messages.success(request, "Event is successfuly Booked !verify your mail")
+        return render(request, 'event3.html')
+    if request.user.is_authenticated:
+        allevent4 = BirthdayParty.objects.all()
+        cont4 = {'il': allevent4}
+        return render(request, 'event3.html',cont4)
+    else:
+        messages.success(request, "PLEASE LOGIN!")
+    return redirect('/')
 
 
 def Caterings(request):
@@ -320,7 +508,7 @@ def Caterings(request):
     if request.user.is_authenticated:
         return render(request,'caterings.html')
     else:
-         messages.error(request, "PLEASE LOGIN!")
+         messages.success(request, "PLEASE LOGIN!")
     return redirect('/dealerhome')
 
 def MusicConcerts(request):
@@ -343,7 +531,7 @@ def MusicConcerts(request):
     if request.user.is_authenticated:
         return render(request,'Musicconcerts.html')
     else:
-         messages.error(request, "PLEASE LOGIN!")
+         messages.success(request, "PLEASE LOGIN!")
     return redirect('/dealerhome')
 
 def weddinghall1(request):
@@ -366,7 +554,7 @@ def weddinghall1(request):
     if request.user.is_authenticated:
         return render(request,'weddinghall.html')
     else:
-         messages.error(request, "PLEASE LOGIN!")
+         messages.success(request, "PLEASE LOGIN!")
     return redirect('/dealerhome')
 
 
@@ -390,7 +578,7 @@ def Birthday(request):
     if request.user.is_authenticated:
         return render(request,'Birthday.html')
     else:
-         messages.error(request, "PLEASE LOGIN!")
+         messages.success(request, "PLEASE LOGIN!")
     return redirect('/dealerhome')
 
 
@@ -405,17 +593,22 @@ def contactform(request):
         print(name,emailS,stateS,subjectS,username)
         contactform = contact1(Name=name,email=emailS,State=stateS,Subject=subjectS,username=username)
         contactform.save()
-        msg = "Your Problem has been initiated to administrator! We will contact you with in 24 hours"
-        send_mail('Query',  # subject
+        msg = "Your Message has been reached to administrator! We will contact you with in 24 hours"
+        if User.objects.filter(email=emailS).exists():
+            send_mail('Query',  # subject
                   msg,
                   'outlining25@gmail.com',  # from
-                   [request.user.email],  # to
+                   [emailS],  # to
                   fail_silently=False,
                   )
 
-        messages.success(request, "Message sent." )
+            messages.success(request, "Message sent." )
+            return render(request,'contact.html')
 
     return render(request,'contact.html')
+      
+
+   
 
 def dealercontacts1(request):
     if request.method == 'POST':
@@ -454,14 +647,17 @@ def fp1(request):
 
 @csrf_exempt
 def fp(request):
-    email=request.POST['email']
-    send_mail('Changing Password',  # subject
+    email1=request.POST['email']
+    if User.objects.filter(email=email1).exists():
+        send_mail('Changing Password',  # subject
                   'http://127.0.0.1:8000/cp/',
                   'outlining25@gmail.com',  # from
-                   [email],  # to
+                  [email1],  # to
                   fail_silently=False,
                   )
-    messages.success(request,'Mail Successfully Sent')
+        messages.success(request,'Mail Successfully Sent')
+        return render(request, 'forgotpass.html')
+    messages.success(request, 'Email doesnot exist')
     return render(request, 'forgotpass.html')
     
 
@@ -493,15 +689,19 @@ def fp2(request):
 
 @csrf_exempt
 def fp3(request):
-    email=request.POST['email']
-    send_mail('Changing Password',  # subject
+    email2=request.POST['email']
+    if User.objects.filter(email=email2).exists():
+        send_mail('Changing Password',  # subject
                   'http://127.0.0.1:8000/cp2/',
                   'outlining25@gmail.com',  # from
-                   [email],  # to
+                  [email2],  # to
                   fail_silently=False,
                   )
-    messages.success(request,'Mail Successfully Sent')
-    return render(request, 'forgotpass1.html')
+        messages.success(request, 'Mail Successfully Sent')
+        return render(request, 'forgotpass1.html')
+    messages.success(request, 'Email doesnot exist')
+    return render(request, 'forgotpass.html')
+
     
 
 def cp2(request) :
@@ -523,11 +723,4 @@ def cp3(request):
         return redirect('/cp1')
 
 
-def calender(request):
-    if request.user.is_authenticated:
-        username=request.user.username
-        allevents = event.objects.filter(username=username)
-        context = {'al': allevents}
-        return render(request, 'calender.html', context)
-    messages.error(request,"Please login")
-    return redirect('/')
+

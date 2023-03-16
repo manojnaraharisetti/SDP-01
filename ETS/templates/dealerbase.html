@@ -7,6 +7,10 @@
       rel="stylesheet">
       <link rel="icon" href="data:,">
 <style>
+  .cateringsbg{
+  background-color: rgba(108, 185, 245, 0.607);
+}
+
   *{
          margin: 0;
          padding: 0;
@@ -719,17 +723,35 @@ table, tr, td {
 
         <div class="dropdown">
           <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-           DEALER HISTORY
+           SERVICES
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/dealerhistory00">caterings</a></li>
-            <li><a class="dropdown-item" href="/dealerhistory01">Musical concerts</a></li>
-            <li><a class="dropdown-item" href="/dealerhistory02">wedding</a></li>
-            <li><a class="dropdown-item" href="/dealerhistory03">Birthday</a></li>
+            <li><a class="dropdown-item" href="/cateringservice">catering service</a></li>
+            <li><a class="dropdown-item" href="/Musicalconcert">Musical concerts</a></li>
+            <li><a class="dropdown-item" href="/weddinghall">wedding Halls</a></li>
+            <li><a class="dropdown-item" href="/birthday">Birthday Halls</a></li>
           </ul>
 
         </div>
 
+        <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           DEALER HISTORY
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/dealerhistory00">caterings History</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory01">Musical concerts History</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory02">wedding History</a></li>
+            <li><a class="dropdown-item" href="/dealerhistory03">Birthday History</a></li>
+          </ul>
+
+        </div>
+ <li class="nav-item">
+          <a class="nav-link" href="/terms2">DELETE AN EVENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/terms3">TERMS AND CONDITIONS</a>
+        </li>
 
        
         {% if user.is_authenticated %}

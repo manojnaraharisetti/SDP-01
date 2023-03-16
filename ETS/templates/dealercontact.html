@@ -21,7 +21,7 @@
           <img src="/static/images/map.jpg" style="width:100%">
         </div>
         <div class="column">
-          <form action="http://127.0.0.1:8000/contact1/" method="post">
+          <form action="/contact1/" method="post">
             {% csrf_token %}
             <label for="name" id="label1">Name</label>
             <input type="text" id="name" name="dealername" placeholder="Your name.." class="cname" required>

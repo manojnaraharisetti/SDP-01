@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block title %} Event {% endblock %}
+{% block body %}
+<style>
+.l1{
+  text-indent: 75px;
+}
+.l2{
+  text-indent: 40px;
+}
+.l3{
+  text-indent: 94px;
+}
+.l4{
+  text-indent: 99px;
+}
+.l5{
+  text-indent: 118px;
+}
+.l6{
+  text-indent: 35px;
+}
+.eventhtml{
+    box-shadow: 0 0 22px rgb(62 145 224);
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(108, 185, 245, 0.607);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    width: 45%;
+}
+.eventhtml h1{
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    margin-bottom: 15px;
+    padding: 4px 0;
+    font-weight: bold;
+}
+.cust_book2 h1:hover{
+  width: 60%;
+}
+.box{
+  padding: 2px;
+  margin: 50px 0px;
+  width: 100%;
+
+}
+.box input,select{
+    text-align: center;
+    background: none;
+    font-size: 20px;
+    width: 65%;
+    outline: none;
+    border: none;
+    color: rgb(245, 247, 251);
+    padding: 5px 10px;
+    border-bottom: 2px solid rgb(245, 183, 26);
+}
+input.sname{
+  padding: 5px 10px;
+}
+.alert {
+	  padding: 20px;
+	  background-color: #a6f089;
+	  color: rgb(18, 3, 3);
+	}
+
+	.closebtn {
+	  margin-left: 15px;
+	  color: rgb(14, 2, 2);
+	  font-weight: bold;
+	  float: right;
+	  font-size: 22px;
+	  line-height: 20px;
+	  cursor: pointer;
+	  transition: 0.3s;
+	}
+
+	.closebtn:hover {
+	  color: black;
+	}
+  
+
+
+</style>
+{% if user.is_authenticated %}
+
+<div class="heading">
+
+  <h1 align="center"top="40%">OUT LINING</h1>
+</div>
+<div class="pop" align="center">
+    <marquee direction="right" id="pop1" >
+        <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+    </marquee>
+  </div>
+<div align="center" class="eventhtml" >
+  <u><h1>Creating a new Event</h1></u>
+  <form class="box" action="/event/" method="post" id="mrt">
+  {% csrf_token %}
+  <a href="/home">
+    <img src="/static/images/homeicon.png" class="eventhomeicon">
+  </a>
+<label class="l1">Type of event:</label><select name="tp"  class="drop" required>
+
+  <option value="BirthdayParty">Birthday Party</option>
+</select><br>
+Name of the customer:<input type="text" name="name" class="cust" required><br>
+<label class="l2">Date of the event:</label><input type="date" min="2022-12-10" name="date"  class="date" required><br><br>
+<label class="l3">StartTime:</label><input type="time" name="stime"  class="st" required><br><br>
+<label class="l4">EndTime:</label><input type="time" name="etime"  class="et" required><br><br>
+<label class="l5">Venue: </label><input type="text" name="venue" id="n6" class="venu" required><br>
+<div>
+  <label class="l6"> Is food required:</label>
+    <select name="food" id="n7" class="food" required>
+      <option value="Yes" class="cateringsbg">Yes</option>
+      <option value="No" class="cateringsbg">No</option>
+    </select>
+</div>
+           <div>
+  <label class="l7"> Select Your dealer:</label>
+    <select name="sdeal" id="n8" class="retri" required>
+     {% for i in il %}
+      <option value="{{i.birthdayname}}" class="cateringsbg">{{i.birthdayname}}</option>
+      {% endfor %}
+    </select>
+</div>
+<div class="alinea-left">
+  <input type="checkbox" id="checkbox" name="Privacy">
+  <label id="checkboxes" for="checkbox">Accept terms and conditions</label>
+</div>
+<div>
+<button class="cust_btn" type="submit">BOOK</button>
+</div>
+</form>
+</div>
+
+
+
+            {% endif %}
+
+{% endblock %}

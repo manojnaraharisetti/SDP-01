@@ -11,7 +11,7 @@
     color: rgb(255, 255, 255);
     border-radius: 20px;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 31%;
     width: 45%;
 }
@@ -88,20 +88,20 @@ input.sname{
       </div>
  <div align="center" class="cust_book2">
     <u><h1>Birthday Parties</h1></u>
-          <form class="box" action='http://127.0.0.1:8000/birthday/' method="post" >
+          <form class="box" action='/birthday/' method="post" >
           {% csrf_token %}
           <a href="/dealerhome">
             <img src="/static/images/homeicon.png" class="birthdayhomeicon">
           </a>
           <div>
           Service Type:<select name="dp"  class="drop" required>
-            <option value="BirthdayParty">Birthday Party</option>
+            <option value="Birthday Party">Birthday Party</option>
           </select><br>
           Birthday Hall Name:<input type="text" name="birthdaynames" class="cust" required><br>
           Name:<input type="text" name="birthdayname" class="name" required><br>
           Address:<input type="text" name="birthdayaddress1" class="addr" required><br>
           City:<input type="tel" name="birthdaycitys" class="city" required><br><br>
-          Price:<input type="text" name="birthdayprices" class="capacity" required><br>
+          Price:<input type="number" name="birthdayprices" class="capacity" required><br><br>
           Mobile:<input type="tel" name="birthdaynums" class="num" required maxlength="10" pattern="^\d{10}$"><br><br>
           Email:<input type="email" name="birthdayemails1" class="email" required><br>
            <div>

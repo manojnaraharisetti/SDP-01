@@ -84,8 +84,13 @@ input.sname{
 	.closebtn:hover {
 	  color: black;
 	}
+.love label{
+ left: 10%;
+}
+.love input{
+top: 80%;
 
-
+}
 </style>
 {% if user.is_authenticated %}
 
@@ -100,19 +105,17 @@ input.sname{
   </div>
 <div align="center" class="eventhtml" >
   <u><h1>Creating a new Event</h1></u>
-  <form class="box" action="http://127.0.0.1:8000/event/" method="post" id="mrt">
+  <form class="box" action="/event/" method="post" id="mrt">
   {% csrf_token %}
   <a href="/home">
     <img src="/static/images/homeicon.png" class="eventhomeicon">
   </a>
 <label class="l1">Type of event:</label><select name="tp"  class="drop" required>
   <option value="Caterings">Caterings</option>
-  <option value="Musicicalconcert">Musicical concert</option>
-  <option value="WeddingHall">Wedding Hall</option>
-  <option value="BirthdayParty">Birthday Party</option>
+
 </select><br>
 Name of the customer:<input type="text" name="name" class="cust" required><br>
-<label class="l2">Date of the event:</label><input type="date" name="date"  class="date" required><br><br>
+<label class="l2">Date of the event:</label><input  min="2022-12-05" type="date" name="date"  class="date" required><br><br>
 <label class="l3">StartTime:</label><input type="time" name="stime"  class="st" required><br><br>
 <label class="l4">EndTime:</label><input type="time" name="etime"  class="et" required><br><br>
 <label class="l5">Venue: </label><input type="text" name="venue" id="n6" class="venu" required><br>
@@ -122,6 +125,19 @@ Name of the customer:<input type="text" name="name" class="cust" required><br>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select> 
+</div>
+       <div>
+  <label class="l7"> Select Your dealer:</label>
+    <select name="sdeal" id="n8" required>
+     {% for i in il %}
+      <option value="{{i.sname}}" class="cateringsbg">{{i.sname}}</option>
+      {% endfor %}
+    </select>
+</div id="love">
+
+<div class="alinea-left">
+  <input type="checkbox" id="checkbox" name="Privacy">
+  <label id="checkboxes" for="checkbox">Accept terms and conditions</label>
 </div>
 <div>
 <button class="cust_btn" type="submit">BOOK</button>
