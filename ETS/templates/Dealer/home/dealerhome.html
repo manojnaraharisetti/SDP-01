@@ -1,0 +1,244 @@
+{% extends 'Dealer/dealerbase.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+<body>
+  {% for msg in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+     {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+<div class="heading">
+  <h1 align="center">OUT LINING</h1>
+</div>
+<div class="pop" align="center">
+    <marquee direction="right" id="pop1" >
+        <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+    </marquee>
+ </div>
+ <div class="grp1">
+  <a href="/cateringservice">
+    <h3 id="grp1m">Catering</h3>
+  </a>
+    <a href="/cateringservice">
+    <img src="/static/images/caterings.jpg" class="grppic1">
+    </a>
+    <a href="/dealerhome">
+      <img src="/static/images/homeicon.png" class="cathomeicon">
+    </a>
+    <div id="catering">
+        A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+        Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests 
+        with food and refreshments. When the client contacts the caterer for the catering services,
+        the catering company can hand over the catering booking form to the client that he is required to fill.
+    </div>
+  </div>
+
+
+<div class="grp2" >
+  <a href="/Musicalconcert">
+  <h3 id="grp2m">Musical concerts</h3>
+</a>
+  <a href="/Musicalconcert">
+  <img src="/static/images/Music.jpg" class="grppic2">
+</a>
+<a href="/dealerhome">
+  <img src="/static/images/homeicon.png" class="mushomeicon">
+</a>
+  <div id="Music">
+    A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+    Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests 
+    with food and refreshments. When the client contacts the caterer for the catering services,
+    the catering company can hand over the catering booking form to the client that he is required to fill.
+</div>
+
+  </div>
+<div class="grp3">
+  <a href="/weddinghall"> 
+  <h3 id="grp3m">Wedding</h3>
+  </a>
+  <a href="/weddinghall"> 
+  <img src="/static/images/wedding.jpg" class="grppic3">
+  </a>
+  <a href="/dealerhome">
+    <img src="/static/images/homeicon.png" class="wedhomeicon">
+  </a>
+  <div id="Wedding">
+    A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+    Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests 
+    with food and refreshments. When the client contacts the caterer for the catering services,
+    the catering company can hand over the catering booking form to the client that he is required to fill.
+</div>
+</div>
+
+<div class="grp4">
+  <a href="/birthday">  
+  <h3 id="grp4m">Birthday parties</h3>
+  </a>
+  <a href="/birthday">  
+  <img src="/static/images/birthday.jpg" class="grppic4">
+  </a>
+  <a href="/dealerhome">
+    <img src="/static/images/homeicon.png" class="birhomeicon">
+  </a>
+  <div id="Birthday">
+    A catering booking form is designed by caterers for those people who want to get a reservation for the catering services.
+    Usually, people try to render the services of caterers when they conduct an event and feel the need to serve the guests 
+    with food and refreshments. When the client contacts the caterer for the catering services,
+    the catering company can hand over the catering booking form to the client that he is required to fill.
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white" id="footer">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="facebook" href="#!" id="g"><img src="/static/images/facebook.png"></a>
+
+        <!-- Twitter -->
+        <a class="twitter" href="#!" id="g"><img src="/static/images/twitter.png"></a>
+
+        <!-- Google -->
+        <a class="google" id="g" href="#!" > <img src="/static/images/google.png"></a>
+
+        <!-- Instagram -->
+        <a class="instagram" href="#!" id="g"><img src="/static/images/instagram.png"></a>
+
+        <!-- Linkedin -->
+        <a class="linkedin" href="#!" id="g"><img src="/static/images/linkedin.png"></a>
+
+        <!-- Github -->
+        <a class="github" href="#!" id="g"><img src="/static/images/github.png"></a>
+      </section>
+      <!-- Section: Social media -->
+
+
+
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nulla fugit architecto neque eveniet,
+          incidunt consequuntur libero, cumque, laboriosam quidem illum eos. Unde modi natus non amet,
+          expedita quaerat. Fugit..
+        </p>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://Raja-25/ETS.com/">manojnaraharisetti</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</body>
+</html>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

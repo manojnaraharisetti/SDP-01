@@ -1,0 +1,92 @@
+{% extends 'Dealer/dealerbase.html' %}
+{% block title %} Event {% endblock %}
+{% block body %}
+<style>
+    .eventhtml{
+    box-shadow: 0 0 22px rgb(62 145 224);
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(108, 185, 245, 0.607);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    width: 45%;
+}
+.eventhtml h1{
+    display: inline-block;
+    font-size: 40px;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    margin-bottom: 15px;
+    padding: 4px 0;
+    font-weight: bold;
+}
+.closebtn {
+    margin-left: 15px;
+    color: rgb(14, 2, 2);
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: black;
+  }
+  .cust_btn{
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    font-size: 22;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    width: 35%;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 90px;
+    border: 2px solid rgb(245, 183, 26);
+    font-weight: bold;
+} 
+
+.cust_btn:hover{
+    color: rgb(250, 234, 8);
+    background: rgb(20, 173, 238);
+    outline: none;
+} 
+</style>
+<body>
+<div class="heading">
+
+    <h1 align="center"top="40%">OUT LINING</h1>
+  </div>
+  <div class="pop" align="center">
+      <marquee direction="right" id="pop1" >
+          <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+      </marquee>
+    </div>
+  <div align="center" class="eventhtml" >
+    <u><h1>Terms and conditions</h1></u>
+    <form class="box" action="/dealerdeleteevent/"  id="mrt">
+    {% csrf_token %}
+    Last updated: 3-12-2022 <br>
+1)Please read these Terms and Conditions  carefully before using the https://outlining.com  website.<br>
+2)Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms.
+These Terms apply to all visitors, users
+    and others who access or use the Service.<br>
+3)By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
+<br>
+4)While Booking an event by accepting terms and conditions as you want to cancel
+an event you should pay penalty to the administrator.
+
+
+       <button class="cust_btn" type="submit" >Accept</button>
+
+  </form>
+  </div>
+  </body>
+  {% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'Dealer/dealerbase.html' %}
+{% block title %} Dealer Faqs {% endblock %}
+{% block body %}
+<div class="heading">
+  <h1 align="center">OUT LINING</h1>
+</div>
+<div class="pop" align="center">
+    <marquee direction="right" id="pop1" >
+        <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+    </marquee>
+  </div>
+<section class="rows">
+  <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
+  <p class="text-center mb-5">
+    Find the answers for the most frequently asked questions below
+  </p>
+  <a href="/dealerhome">
+    <img src="/static/images/homeicon.png" class="faqshomeicon">
+  </a>
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4">
+      <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i>CAN I ADD MULTIPLE USERS?</h6>
+      <p>
+        Outlining is ideally suited for large offices with multiple employees. You can add and remove an unlimited number of employees as you see fit.
+      </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i>DOES OUTLINING OFFER A MOBILE APP?</h6>
+      <p>
+        Oz does not have a mobile app, but we are platform agnostic. You can reach the Oz browser from your laptop, phone, iPad, and more
+      </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4" id="faq">
+      <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i>
+        CAN I HAVE MULTIPLE DAY EVENTS?
+      </h6>
+      Yes! With Oz, you can have multiple day bookings in one event. You can also book multiple rooms in one venue.
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i> HOW DOES OZ ADDRESS USER PERMISSIONS WITHIN THE VARIOUS TOOLS?
+      </h6>
+      <p>
+        Oz has a User table where you can assign various permissions. For example your bookings are your business.
+         You can assign different permissions so some people can approve the booking, and some can or can’t delete or edit your bookings.
+         You will have 100% control of your events and your bookings.
+      </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i>WHAT IF I NEED HELP?
+      </h6>
+      <p>We offer phone and email support with a live person during business hours,
+         and any call or email you deem important after hours we will respond if not immediately, then shortly after.
+        .</p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i>CAN I CANCEL AT ANYTIME?</h6>
+      <p>
+        More than anything, Oz wants to earn your trust. There are no long-term contracts with us.
+      </p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+{% endblock %}

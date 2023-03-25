@@ -1,0 +1,93 @@
+{% extends 'Dealer/base.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+.head input{
+    text-align: center;
+    background: none;
+    font-size: 24px;
+    width: 35%;
+    outline: none;
+    border: none;
+    color: rgb(0, 75, 250);
+    padding: 5px 10px;
+    border-bottom: 2px solid rgb(26, 245, 114);
+
+}
+.rak{
+    box-shadow: 0 0 22px rgb(255, 255, 255);
+  font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 78px 25px;
+    background-color: rgba(3, 24, 57, 0.382);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    top: 30%;
+   left: 27%;
+   width: 50%;
+
+}
+.head label{
+top: 30%;
+text-indent: 79px;
+}
+.head button{
+    color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+    position: absolute;
+    top: 80%;
+    left: 32%;
+    font-size: 22;
+    cursor: pointer;
+    outline: none;
+    width: 35%;
+    margin: 12px 0;
+    padding: 6px;
+    border-radius: 90px;
+    border: 2px solid rgb(245, 183, 26);
+    font-weight: bold;
+}
+.head button:hover{
+    color: rgb(250, 234, 8);
+    background: rgb(20, 173, 238);
+    outline: none;
+} 
+.head input{
+text-align: center;
+}
+.rak u{
+color: rgb(255, 255, 255);
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1 align="center">OUT LINING</h1>
+      </div>
+      <div class="pop" align="center">
+          <marquee direction="right" id="pop1" >
+              <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+          </marquee>
+        </div>
+   <div class="rak">  
+<u><h1  align="center"> Changing The password</h1></u>
+<form class="head" method="post" action="/cp3/">
+   <label> Username:        </label><input type="text" name="username"required ><br>
+   <label> Password:       </label><input type="password" name="Password" minlength="8" required><br>
+  Re-enter Password:<input type="password" name="re-enter Password"minlength="8"required>
+<br>
+<button align="center">  Submit</button>
+</div> 
+</form>
+
+</body>
+</html>
+{% endblock %}

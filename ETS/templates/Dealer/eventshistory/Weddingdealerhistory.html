@@ -1,0 +1,48 @@
+{% extends 'Dealer/dealerbase.html' %}
+{% block title %} Dealer History {% endblock %}
+{% block body %}
+    <div class="heading">
+      <h1 align="center">OUT LINING</h1>
+    </div>
+    <div class="pop" align="center">
+        <marquee direction="right" id="pop1" >
+            <h5>WHERE YOU CAN OUTLINE MULTIPLE EVENTS IN A SINGLE GO</h5>
+        </marquee>
+      </div>
+      <div align="center" class="cust_book1" >
+        <u><h1 class="book"">Wedding Halls</h1></u>
+        <a href="/dealerhome">
+          <img src="/static/images/homeicon.png" class="weddingbookhomeicon">
+        </a>
+<table id="customers">
+  <tr>
+    <th>S.No</th>
+    <th>Service Name</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+  </tr>
+  <tbody>
+  {% for j in dl %} 
+  <tr>  
+    <th scope="row">{{forloop.counter}}</th>
+    <td >{{j.wname}}</td>
+    <td >{{j.name}}</td>
+    <td>{{j.mobile}}</td>
+    <td>{{j.email}}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+
+
+      
+
+      </div>
+    </form>
+
+
+
+</body>
+</html>
+{% endblock %}
