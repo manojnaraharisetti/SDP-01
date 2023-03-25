@@ -13,11 +13,11 @@ from django.core.mail import send_mail
 
 
 def dealerlogin(request):
-    return render(request, "Dealer/login/login2.html")
+    return render(request, "Dealer/login/login.html")
 
 
 def dealerregister(request):
-    return render(request, "Dealer/login/register2.html")
+    return render(request, "Dealer/login/register.html")
 
 
 def userlogin(request):
@@ -33,29 +33,29 @@ def home(request):
 
 
 def dealerhome(request):
-    return render(request, 'Dealer/home/dealerhome.html')
+    return render(request, 'Dealer/home/home.html')
 
 
 def terms(request):
-    return render(request, "User/termsandconditions/termsandconditions1.html")
+    return render(request, "User/termsandconditions/termsandconditionsreading.html")
 
 
 def terms1(request):
     if request.user.is_authenticated:
-        return render(request, "User/termsandconditions/termsandconditions.html")
+        return render(request, "User/termsandconditions/termsandconditionsaccept.html")
     messages.success(request, "Please Login")
     return redirect("/")
 
 
 def terms2(request):
     if request.user.is_authenticated:
-        return render(request, "Dealer/termsandconditions/termsandconditions2.html")
+        return render(request, "Dealer/termsandconditions/termsandconditionsaccept.html")
     messages.success(request, "Please Login")
     return redirect("/dealerhome")
 
 
 def terms3(request):
-    return render(request, "Dealer/termsandconditions/termsandconditions3.html")
+    return render(request, "Dealer/termsandconditions/termsandconditionsreading.html")
 
 
 def history(request):
@@ -104,9 +104,9 @@ def dealerdeleteevent(request):
                     print(userdata)
                     userdata.delete()
                     messages.success(request, 'Event deleted Sucessfully')
-                    return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                    return render(request, 'Dealer/eventdelete/delete.html')
                 messages.success(request, "Data doesnot exists")
-                return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                return render(request, 'Dealer/eventdelete/delete.html')
             if type == "Musicical concert":
                 username = request.user.username
                 if Musicalconcertm.objects.filter(conname=cname).exists() and Musicalconcertm.objects.filter(name=oname).exists():
@@ -115,9 +115,9 @@ def dealerdeleteevent(request):
                     print(userdata1)
                     userdata1.delete()
                     messages.success(request, 'Event deleted Sucessfully')
-                    return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                    return render(request, 'Dealer/eventdelete/delete.html')
                 messages.success(request, "Data doesnot exists")
-                return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                return render(request, 'Dealer/eventdelete/delete.html')
             if type == "Wedding Hall":
                 username = request.user.username
                 if weddinghalls.objects.filter(wname=cname).exists() and weddinghalls.objects.filter(name=oname).exists():
@@ -125,9 +125,9 @@ def dealerdeleteevent(request):
                         username=username, wname=cname, type2=type, name=oname)
                     userdata2.delete()
                     messages.success(request, 'Event deleted Sucessfully')
-                    return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                    return render(request, 'Dealer/eventdelete/delete.html')
                 messages.success(request, "Data doesnot exists")
-                return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                return render(request, 'Dealer/eventdelete/delete.html')
             if type == "Birthday Party":
                 username = request.user.username
                 if BirthdayParty.objects.filter(birthdayname=cname).exists() and BirthdayParty.objects.filter(birthdayame=oname).exists():
@@ -135,11 +135,11 @@ def dealerdeleteevent(request):
                         username=username, birthdayname=cname, type3=type, birthdayame=oname)
                     userdata3.delete()
                     messages.success(request, 'Event deleted Sucessfully')
-                    return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                    return render(request, 'Dealer/eventdelete/delete.html')
                 messages.success(request, "Data doesnot exists")
-                return render(request, 'Dealer/eventdelete/dealerdelete.html')
+                return render(request, 'Dealer/eventdelete/delete.html')
     if request.user.is_authenticated:
-        return render(request, 'Dealer/eventdelete/dealerdelete.html')
+        return render(request, 'Dealer/eventdelete/delete.html')
     else:
         messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
@@ -150,7 +150,7 @@ def dealerhistory(request):
         username0 = request.user.username
         allevent = catering.objects.filter(username=username0)
         cont = {'bl': allevent}
-        return render(request, 'Dealer/eventshistory/cateringdealerhistory.html', cont)
+        return render(request, 'Dealer/eventshistory/cateringhistory.html', cont)
 
     messages.success(request, "Please login")
     return redirect('/')
@@ -161,7 +161,7 @@ def dealerhistory1(request):
         username1 = request.user.username
         allevent1 = Musicalconcertm.objects.filter(username=username1)
         cont1 = {'cl': allevent1}
-        return render(request, 'Dealer/eventshistory/Musicdealerhistory.html', cont1)
+        return render(request, 'Dealer/eventshistory/Musichistory.html', cont1)
 
     messages.success(request, "Please login")
     return redirect('/')
@@ -172,7 +172,7 @@ def dealerhistory2(request):
         username2 = request.user.username
         allevent2 = weddinghalls.objects.filter(username=username2)
         cont1 = {'dl': allevent2}
-        return render(request, 'Dealer/eventshistory/Weddingdealerhistory.html', cont1)
+        return render(request, 'Dealer/eventshistory/Weddinghistory.html', cont1)
 
     messages.success(request, "Please login")
     return redirect('/')
@@ -183,7 +183,7 @@ def dealerhistory3(request):
         username3 = request.user.username
         allevent3 = BirthdayParty.objects.filter(username=username3)
         cont1 = {'el': allevent3}
-        return render(request, 'Dealer/eventshistory/Birthdaydealerhistory.html', cont1)
+        return render(request, 'Dealer/eventshistory/Birthdayhistory.html', cont1)
 
     messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
@@ -194,7 +194,7 @@ def dealerhistory00(request):
         username0 = request.user.username
         allevent = catering.objects.filter(username=username0)
         cont = {'bl': allevent}
-        return render(request, 'Dealer/eventshistory/cateringdealerhistory.html', cont)
+        return render(request, 'Dealer/eventshistory/cateringhistory.html', cont)
 
     messages.success(request, "Please login")
     return redirect('/dealerhome')
@@ -205,7 +205,7 @@ def dealerhistory01(request):
         username1 = request.user.username
         allevent1 = Musicalconcertm.objects.filter(username=username1)
         cont1 = {'cl': allevent1}
-        return render(request, 'Dealer/eventshistory/Musicdealerhistory.html', cont1)
+        return render(request, 'Dealer/eventshistory/Musichistory.html', cont1)
 
     messages.success(request, "Please login")
     return redirect('/dealerhome')
@@ -216,7 +216,7 @@ def dealerhistory02(request):
         username2 = request.user.username
         allevent2 = weddinghalls.objects.filter(username=username2)
         cont1 = {'dl': allevent2}
-        return render(request, 'Dealer/eventshistory/Weddingdealerhistory.html', cont1)
+        return render(request, 'Dealer/eventshistory/Weddinghistory.html', cont1)
 
     messages.success(request, "Please login")
     return redirect('/dealerhome')
@@ -227,7 +227,7 @@ def dealerhistory03(request):
         username3 = request.user.username
         allevent3 = BirthdayParty.objects.filter(username=username3)
         cont1 = {'el': allevent3}
-        return render(request, 'Dealer/eventshistory/Birthdaydealerhistory.html', cont1)
+        return render(request, 'Dealer/eventshistory/Birthdayhistory.html', cont1)
 
     messages.success(request, "PLEASE LOGIN!")
     return redirect('/dealerhome')
@@ -238,7 +238,7 @@ def faqs(request):
 
 
 def dfaqs(request):
-    return render(request, 'Dealer/faqs/dealerfaqs.html')
+    return render(request, 'Dealer/faqs/faqs.html')
 
 
 def contact(request):
@@ -246,7 +246,7 @@ def contact(request):
 
 
 def dealercontacts(request):
-    return render(request, 'Dealer/contact/dealercontact.html')
+    return render(request, 'Dealer/contact/contact.html')
 
 
 def about(request):
@@ -254,7 +254,7 @@ def about(request):
 
 
 def dabout(request):
-    return render(request, 'Dealer/about/dealerabout.html')
+    return render(request, 'Dealer/about/about.html')
 
 
 def cateringbook(request):
@@ -327,7 +327,7 @@ def dealerloginuser(request):
                 request, "Authentication failed Please Login Again")
             return redirect("/dealerlogin")
     else:
-        return render(request, 'Dealer/login/login2.html')
+        return render(request, 'Dealer/login/login.html')
 
 
 def dash(request):
@@ -371,7 +371,7 @@ def dealerregisteruser(request):
         print('user created')
         return redirect('/dealerlogin')
 
-    return render(request, 'Dealer/login/login2.html')
+    return render(request, 'Dealer/login/login.html')
 
 
 def event1(request):
@@ -407,11 +407,11 @@ def event1(request):
 
         messages.success(
             request, "Event is successfuly Booked !verify your mail")
-        return render(request, 'User/eventbooking/event.html')
+        return render(request, 'User/eventbooking/caterings.html')
     if request.user.is_authenticated:
         allevent4 = catering.objects.all()
         cont4 = {'il': allevent4}
-        return render(request, 'User/eventbooking/event.html', cont4)
+        return render(request, 'User/eventbooking/caterings.html', cont4)
     else:
         messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
@@ -450,11 +450,11 @@ def event2(request):
 
         messages.success(
             request, "Event is successfuly Booked !verify your mail")
-        return render(request, 'User/eventbooking/event1.html')
+        return render(request, 'User/eventbooking/Musicalconcert.html')
     if request.user.is_authenticated:
         allevent4 = Musicalconcertm.objects.all()
         cont4 = {'il': allevent4}
-        return render(request, 'User/eventbooking/event1.html', cont4)
+        return render(request, 'User/eventbooking/Musicalconcert.html', cont4)
     else:
         messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
@@ -536,11 +536,11 @@ def event4(request):
 
         messages.success(
             request, "Event is successfuly Booked !verify your mail")
-        return render(request, 'User/eventbooking/event3.html')
+        return render(request, 'User/eventbooking/birthdayparty.html')
     if request.user.is_authenticated:
         allevent4 = BirthdayParty.objects.all()
         cont4 = {'il': allevent4}
-        return render(request, 'User/eventbooking/event3.html', cont4)
+        return render(request, 'User/eventbooking/birthdayparty.html', cont4)
     else:
         messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
@@ -706,7 +706,7 @@ def loginout2(request):
 
 def fp1(request):
     c = None
-    return render(request, 'User/forgotpass/forgotpass.html')
+    return render(request, 'User/forgotpassword/forgotpassword.html')
 
 
 @csrf_exempt
@@ -720,13 +720,13 @@ def fp(request):
                   fail_silently=False,
                   )
         messages.success(request, 'Mail Successfully Sent')
-        return render(request, 'User/forgotpass/forgotpass.html')
+        return render(request, 'User/forgotpassword/forgotpassword.html')
     messages.success(request, 'Email doesnot exist')
-    return render(request, 'User/forgotpass/forgotpass.html')
+    return render(request, 'User/forgotpassword/forgotpassword.html')
 
 
 def cp(request):
-    return render(request, 'User/changingpassword/cp.html')
+    return render(request, 'User/changingpassword/changepassword.html')
 
 
 @csrf_exempt
@@ -746,7 +746,7 @@ def cp1(request):
 
 def fp2(request):
     c = None
-    return render(request, 'Dealer/forgotpass/forgotpass1.html')
+    return render(request, 'Dealer/forgotpassword/forgotpassword.html')
 
 
 @csrf_exempt
@@ -760,13 +760,13 @@ def fp3(request):
                   fail_silently=False,
                   )
         messages.success(request, 'Mail Successfully Sent')
-        return render(request, 'Dealer/forgotpass/forgotpass1.html')
+        return render(request, 'Dealer/forgotpassword/forgotpassword.html')
     messages.success(request, 'Email doesnot exist')
-    return render(request, 'Dealer/forgotpass/forgotpass.html')
+    return render(request, 'Dealer/forgotpassword/forgotpassword.html')
 
 
 def cp2(request):
-    return render(request, 'Dealer/changingpassword/cp1.html')
+    return render(request, 'Dealer/changingpassword/changepassword.html')
 
 
 @csrf_exempt
