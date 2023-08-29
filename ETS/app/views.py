@@ -493,11 +493,11 @@ def event3(request):
 
         messages.success(
             request, "Event is successfuly Booked !verify your mail")
-        return render(request, 'User/eventbooking/event2.html')
+        return render(request, 'User/eventbooking/weddinghall.html')
     if request.user.is_authenticated:
         allevent4 = weddinghalls.objects.all()
         cont4 = {'il': allevent4}
-        return render(request, 'User/eventbooking/event2.html', cont4)
+        return render(request, 'User/eventbooking/weddinghall.html', cont4)
     else:
         messages.success(request, "PLEASE LOGIN!")
     return redirect('/')
@@ -689,7 +689,7 @@ def dealercontacts1(request):
         contactform.save()
         messages.success(request, "Message sent.")
 
-    return render(request, 'Dealer/contact/dealercontact.html')
+    return render(request, 'Dealer/contact/contact.html')
 
 
 def loginout(request):
